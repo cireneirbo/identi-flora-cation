@@ -6,8 +6,10 @@ This project is for the [MongoDB Atlas hackathon](https://dev.to/devteam/announc
 
 ## Getting Started
 * clone or fork this repo
-* ### Connect to the Database
-* ### Start the web app
+* 
+### Connect to the Database
+
+### Start the web app
 * navigate to the project's top directory in the terminal.
 * start the app using `npm start`
 
