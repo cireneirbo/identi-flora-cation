@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
 import { Component } from 'react';
 import './App.css';
@@ -7,17 +8,21 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { apiResponse: "" };
+    this.state = { };
   }
 
   callAPI() {
-      fetch("http://localhost:9000/")
-          .then(res => res.text())
-          .then(res => this.setState({ apiResponse: res }))
-          .catch(err => err);
+      
+    axios.get("http://localhost:9000/")
+    .then(res => {
+      const data = res.data;
+      this.setState(data);
+      console.log(this.state);
+    });
+
   }
 
-  componentWillMount() {
+  componentDidMount() {
       this.callAPI();
   }
 
@@ -38,7 +43,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
-        <p>${this.state.apiResponse}</p>
+        <p>{this.state.title}</p>
       </div>
     );
   }
