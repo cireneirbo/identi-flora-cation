@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import async from 'async';
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,24 +9,30 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { };
+    /*this.moreArr = "unchaged";*/
   }
-
+  
   callAPI() {
-      
     axios.get("http://localhost:9000/")
     .then(res => {
       const data = res.data;
       this.setState(data);
       console.log(this.state);
+      /*this.moreArr = this.state.moreInfo.map((numList) => 
+        <p>{numList}</p>
+      ); */
     });
-
   }
 
   componentDidMount() {
       this.callAPI();
+      
   }
 
+  
+  
   render() {
+    //console.log(this.state);
     return (
       <div className="App">
         <header className="App-header">
@@ -43,6 +50,8 @@ class App extends Component {
           </a>
         </header>
         <p>{this.state.title}</p>
+        {/* <p>{this.moreArr}</p> */}
+        
       </div>
     );
   }
