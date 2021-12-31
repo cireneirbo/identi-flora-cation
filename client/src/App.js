@@ -73,8 +73,8 @@ function App() {
         {(
           productsList.map(product => {
                 <p key={product.id}>{product.name}</p>
-          })}
-        // )}
+          })
+        )}
       </div>
     );
   //}
