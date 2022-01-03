@@ -4,9 +4,8 @@ import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-//class App extends Component {
-/*
+class App extends Component {
+
   constructor(props) {
     super(props);
     this.state = { };
@@ -26,8 +25,8 @@ function App() {
   componentDidMount() {
       this.callAPI();
   }
-*/
-  
+
+  /*
   const [productsList, setProductsList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -36,10 +35,10 @@ function App() {
       .then((res) => res.json())
       .then((data) => setProductsList([data]))
       .then(setIsLoading(false));
-  }, []);
+  }, []);*/
 
 
-  //render() {
+  render() {
     // const arr = this.state.moreInfo;
     return (
       <div className="App">
@@ -57,7 +56,8 @@ function App() {
             Learn React
           </a>
         </header>
-        {/* <p>{this.state.title}</p> */}
+        <p>{this.state.title}</p>
+        <p>{this.state.moreInfo}</p>
         
         {/* <ol>
           {arr.map(info => (
@@ -70,14 +70,14 @@ function App() {
             <span className='sr-only'>Loading...</span>{' '}
           </div>
         ) :  */}
-        {(
+        {/* {(
           productsList.map(product => {
                 <p key={product.id}>{product.name}</p>
           })
-        )}
+        )} */}
       </div>
     );
-  //}
+  }
 }
 
 export default App;
