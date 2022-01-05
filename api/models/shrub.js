@@ -26,8 +26,8 @@ const ShrubSchema = new Schema(
         poisonous_description: {type: String, required: true, maxLength: 100},
 
         // colors
-        sap_color: {type: String, required: true, maxLength: 100},
-        roots_color: {type: String, required: true, maxLength: 100},
+        // sap_color: {type: String, required: true, maxLength: 100},
+        // roots_color: {type: String, required: true, maxLength: 100},
         flower_color: {type: String, required: true, maxLength: 100},
         fruit_color: {type: String, required: true, maxLength: 100},
         leaves_color: {type: String, required: true, maxLength: 100},
@@ -55,6 +55,48 @@ const ShrubSchema = new Schema(
         images: {type: String, required: true, maxLength: 100},
         
     }
+
+    /*
+
+
+// for display
+
+brief_description:
+sun_requirements: ""
+soil_preferences: []
+water_requirements: ""
+hardiness_zones: []
+poisonous_decription: ""
+
+
+// for search
+
+common_name: ""
+latin_name: ""
+bark_color: ""
+fruit_color: ""
+fruit_bool: 
+flower_bool: 
+poisonous_bool: 
+edible_bool: 
+leaves_type: ""
+plant_type: ""
+shape: ""
+height: ""
+
+flowering_times: []
+images: []
+leaves_color: ""
+stem_color: ""
+flower_color: "" 
+
+
+// for search
+
+// for display
+
+
+    */
 
 );
 
