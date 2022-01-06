@@ -64,8 +64,7 @@ function shrubCreate(
     cb) {
 
     shrubDetail = {
-        first_name: first_name ,
-        family_name: family_name,
+        
         common_name: common_name,
         latin_name: latin_name,
         pseudonyms: pseudonyms,
@@ -97,7 +96,8 @@ function shrubCreate(
         height: height,
         hardiness_zones: hardiness_zones,
         flowering_times: flowering_times,
-        images: images,
+        images: images
+
     }
   
     const shrub = new Shrub(shrubDetail);

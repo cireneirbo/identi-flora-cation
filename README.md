@@ -12,8 +12,10 @@ This project is for the [MongoDB Atlas hackathon](https://dev.to/devteam/announc
 
 ### Start the web app
 * Navigate to the project's top directory in the terminal.
-* Start the app using `npm start`
-* Navigate to [http://localhost:3000/](http://localhost:3000/)
+* Open a second terminal instance in the same location.
+* Start the api in the first terminal using `cd api/ && npm start`
+* Start the client in the second terminal using `cd client/ && npm start`
+* Navigate to [http://localhost:3000/](http://localhost:3000/) if it does not automatically open for you.
 
 ## Dependencies
 * [MongoDB](https://www.mongodb.com/) - a simple-to-use database service.
