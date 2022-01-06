@@ -103,7 +103,7 @@ flower_color: ""
 
 
 
-// Virtual for author's URL
+// Virtual for shrub's URL
 ShrubSchema
     .virtual('url')
     .get(function () {
