@@ -3,7 +3,7 @@ import axios from 'axios';
 // import async from 'async';
 import logo from './logo.svg';
 import './App.css';
-
+/*
 class DataContainer extends Component {
   constructor(props) {
     super(props);
@@ -88,33 +88,41 @@ function DataView(props) {
   )
 }
 
+*/
+function App() {
+//class App extends Component {
 
-class App extends Component {
+  
+/*
+  constructor(props) {
+    super(props);
+    this.state = { 
+      data: []
+    };
+        
+    this.callAPI = this.callAPI.bind(this);
+  }
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { };
-    
-  // }
-
-  // callAPI() {
-  //   axios.get("http://localhost:9000/")
-  //   .then(res => {
-  //     const data = res.data;
-  //     this.setState({data: data});
-  //     console.log(this.state);
+  callAPI() {
+    axios.get("http://localhost:9000/")
+    .then(res => {
+      this.setState({data: res.data});
+      console.log(this.state);
       
-  //   });
-  // }
+    }).catch(err => {
+      console.log(err);
+    });
+  }
 
-  // componentDidMount() {
-  //     this.callAPI();
-  // }
+  componentDidMount() {
+      this.callAPI();
+      console.log(this.state);
+  }
 
-  // componentWillUnmount() {
+  componentWillUnmount() {
 
-  // }
-
+  }
+*/
   /*
   const [productsList, setProductsList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -127,11 +135,36 @@ class App extends Component {
   }, []);*/
 
 
-  render() {
+  //render() {
     // const arr = this.state.moreInfo;
+
+    const [data, setData] = useState("Awaiting API data...");
+    useEffect(() => {
+      axios.get("http://localhost:9000/")
+      .then(res => {
+        setData(res.data);
+      }).catch(err => {
+        console.log(err);
+      });
+    }, []);
+    
+    const [count, setCount] = useState(0);
+
+    console.log(data);
+
+  
     return (
       <div className="App">
-        {/* <header className="App-header">
+        <header className="App-header">
+          <h2>{data.title}</h2>
+          <ul>{data.shrub_list.map(shrub => "hi")}
+            <li></li>
+          </ul>
+          <p>You clicked {count} times!</p>
+          <button onClick={() => setCount(count + 1)}>
+            Add 1
+          </button>
+          {/* <p>{data}</p> */}
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
@@ -144,29 +177,13 @@ class App extends Component {
           >
             Learn React
           </a>
-        </header> */}
-        {/* <p>{this.state.title}</p>
-        <p>{this.state.moreInfo}</p> */}
-        <DataContainer />
-        {/* <ol>
-          {arr.map(info => (
-            <li key={info}>{info}</li>
-          ))}
-        </ol> */}
-        {/* {isLoading ? (
-          <div className='spinner-border text-primary' role='status'>
-            {' '}
-            <span className='sr-only'>Loading...</span>{' '}
-          </div>
-        ) :  */}
-        {/* {(
-          productsList.map(product => {
-                <p key={product.id}>{product.name}</p>
-          })
-        )} */}
+        </header>
+        
+        
       </div>
     );
-  }
+  //}
 }
+
 
 export default App;
