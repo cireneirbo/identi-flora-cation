@@ -1,23 +1,49 @@
-Plant Type:
+common_name:
 
-Bloom time:
+latin_name:
 
-Dimensions:
+brief_description:
 
-Flower Color/Dimensions:
+plant_type:
 
-Leaf Color/Dimensions:
+plant_shape:
 
-Bark Color:
+bloom_time:
 
-Stem Color:
+dimensions:
 
-Sun Exposure Requirements:
+flower_bool:
 
-Soil:
+flower_color:
 
-Water Requirements:
+flower_dimensions:
 
-USDA Hardiness Zone:
+fruit_bool:
 
-Is it dangerous? :
+fruit_color:
+
+leaf_color:
+
+leaf_dimensions:
+
+leaves_type:
+
+bark_color:
+
+stem_color:
+
+sun_exposure:
+
+soil:
+
+water_requirements:
+
+USDA_hardiness_zone:
+
+poisonous_bool:
+
+edible_bool:
+
+skin_irritant_bool:
+
+
