@@ -17,6 +17,7 @@ function ApiCall() {
 
   console.log(data);
 
+  // Displays a waiting message if API hasn't returned yet
   if (data === "Awaiting API data...") {
     return (
       <div>
@@ -24,6 +25,7 @@ function ApiCall() {
       </div>
     );
   }
+  // Return the data
   else {
     return (
       <div>
