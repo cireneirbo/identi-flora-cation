@@ -1,107 +1,50 @@
-/*
-
-*/
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
 const ShrubSchema = new Schema(
+
     {
         
-        // names
         common_name: {type: String, required: true, maxLength: 100},
         latin_name: {type: String, required: true, maxLength: 100},
-        pseudonyms: {type: String, required: true, maxLength: 100},
+        brief_description: {type: String, required: true, maxLength: 1000},
 
-        // descriptions
-        brief_description: {type: String, required: true, maxLength: 100},
-        long_description: {type: String, required: true, maxLength: 1000},
-        fruit_description: {type: String, required: true, maxLength: 100},
-        flower_description: {type: String, required: true, maxLength: 100},
-        leaves_description: {type: String, required: true, maxLength: 100},
-        stem_description: {type: String, required: true, maxLength: 100},
-        roots_description: {type: String, required: true, maxLength: 100},
-        sap_description: {type: String, required: true, maxLength: 100},
-        toxic_description: {type: String, required: true, maxLength: 100},
-        poisonous_description: {type: String, required: true, maxLength: 100},
+        plant_type: {type: Array, required: true, maxLength: 10},
+        plant_shape: {type: Array, required: true, maxLength: 10},
+        bloom_time: {type: String, required: true, maxLength: 100},
 
-        // colors
-        // sap_color: {type: String, required: true, maxLength: 100},
-        // roots_color: {type: String, required: true, maxLength: 100},
-        flower_color: {type: String, required: true, maxLength: 100},
-        fruit_color: {type: String, required: true, maxLength: 100},
-        leaves_color: {type: String, required: true, maxLength: 100},
-        stem_color: {type: String, required: true, maxLength: 100},
+        dimensions: {type: Array, required: true, maxLength: 2},
+        flower_bool: {type: Boolean, required: true, maxLength: 1},
+        flower_color: {type: Array, required: true, maxLength: 10},
 
-        // booleans
-        fruit_bool: {type: String, required: true, maxLength: 100},
-        flower_bool: {type: String, required: true, maxLength: 100},
-        poisonous_bool: {type: String, required: true, maxLength: 100},
-        toxic_bool: {type: String, required: true, maxLength: 100},
-        edible_bool: {type: Boolean, required: true},
+        flower_dimensions: {type: String, required: true, maxLength: 100},
+        fruit_bool: {type: Boolean, required: true, maxLength: 1},
+        fruit_color: {type: Array, required: true, maxLength: 10},
 
-        // types
-        fruit_type: {type: String, required: true, maxLength: 100},
-        leaves_type: {type: String, required: true, maxLength: 100},
-        stem_type: {type: String, required: true, maxLength: 100},
+        leaf_color: {type: Array, required: true, maxLength: 10},
+        leaf_dimensions: {type: Array, required: true, maxLength: 10},
+        leaves_type: {type: Array, required: true, maxLength: 10},
 
-        // stats
-        shape: {type: String, required: true, maxLength: 100},
-        height: {type: String, required: true, maxLength: 100},
-        hardiness_zones: {type: String, required: true, maxLength: 100},
-        flowering_times: {type: String, required: true, maxLength: 100},
+        bark_color: {type: Array, required: true, maxLength: 10},
+        stem_color: {type: Array, required: true, maxLength: 10},
+        sun_exposure: {type: String, required: true, maxLength: 100},
 
-        // images
-        images: {type: String, required: true, maxLength: 100},
-        
+        soil: {type: String, required: true, maxLength: 100},
+        water_requirements: {type: String, required: true, maxLength: 100},
+        hardiness_zone: {type: Array, required: true, maxLength: 20},
+
+        poisonous_bool: {type: Boolean, required: true, maxLength: 1},
+        edible_bool: {type: Boolean, required: true, maxLength: 1},
+        skin_irritant_bool: {type: Boolean, required: true, maxLength: 1},
+
+        isDangerous: {type: Boolean, required: true, maxLength: 1},
+        dangerous_description: {type: String, required: true, maxLength: 1000},
+        images: {type: Array, required: true, maxLength: 1000},
+
     }
 
-    /*
-
-
-// for display
-
-brief_description:
-sun_requirements: ""
-soil_preferences: []
-water_requirements: ""
-hardiness_zones: []
-poisonous_decription: ""
-
-
-// for search
-
-common_name: ""
-latin_name: ""
-bark_color: ""
-fruit_color: ""
-fruit_bool: 
-flower_bool: 
-poisonous_bool: 
-edible_bool: 
-leaves_type: ""
-plant_type: ""
-shape: ""
-height: ""
-
-flowering_times: []
-images: []
-leaves_color: ""
-stem_color: ""
-flower_color: "" 
-
-
-// for search
-
-// for display
-
-
-    */
-
 );
-
-
-
 
 // Virtual for shrub's URL
 ShrubSchema
