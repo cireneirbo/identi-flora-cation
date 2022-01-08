@@ -24,7 +24,7 @@ const ShrubSchema = new Schema(
 
         leaf_color: {type: Array, required: true, maxLength: 10},
         leaf_dimensions: {type: Array, required: true, maxLength: 10},
-        leaves_type: {type: Array, required: true, maxLength: 10},
+        leaf_type: {type: Array, required: true, maxLength: 10},
 
         bark_color: {type: Array, required: true, maxLength: 10},
         stem_color: {type: Array, required: true, maxLength: 10},

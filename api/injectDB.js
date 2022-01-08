@@ -29,117 +29,130 @@ const shrubs = [];
 
 
 function shrubCreate(
-    common_name,
-    latin_name,
-    pseudonyms,
-    brief_description,
-    long_description,
-    fruit_description,
-    flower_description,
-    leaves_description,
-    stem_description,
-    roots_description,
-    sap_description,
-    toxic_description,
-    poisonous_description,
-    sap_color,
-    roots_color,
-    flower_color,
-    fruit_color,
-    leaves_color,
-    stem_color,
-    fruit_bool,
-    flower_bool,
-    poisonous_bool,
-    toxic_bool,
-    edible_bool,
-    fruit_type,
-    leaves_type,
-    stem_type,
-    shape,
-    height,
-    hardiness_zones,
-    flowering_times,
-    images,
-    cb) {
+  common_name,
+  latin_name,
+  brief_description,
 
-    shrubDetail = {
-        
-        common_name: common_name,
-        latin_name: latin_name,
-        pseudonyms: pseudonyms,
-        brief_description: brief_description,
-        long_description: long_description,
-        fruit_description: fruit_description,
-        flower_description: flower_description,
-        leaves_description: leaves_description,
-        stem_description: stem_description,
-        roots_description: roots_description,
-        sap_description: sap_description,
-        toxic_description: toxic_description,
-        poisonous_description: poisonous_description,
-        sap_color: sap_color,
-        roots_color: roots_color,
-        flower_color: flower_color,
-        fruit_color: fruit_color,
-        leaves_color: leaves_color,
-        stem_color: stem_color,
-        fruit_bool: fruit_bool,
-        flower_bool: flower_bool,
-        poisonous_bool: poisonous_bool,
-        toxic_bool: toxic_bool,
-        edible_bool: edible_bool,
-        fruit_type: fruit_type,
-        leaves_type: leaves_type,
-        stem_type: stem_type,
-        shape: shape,
-        height: height,
-        hardiness_zones: hardiness_zones,
-        flowering_times: flowering_times,
-        images: images
+  plant_type,
+  plant_shape,
+  bloom_time,
 
-    }
+  dimensions,
+  flower_bool,
+  flower_color,
+
+  flower_dimensions,
+  fruit_bool,
+  fruit_color,
+
+  leaf_color,
+  leaf_dimensions,
+  leaf_type,
+
+  bark_color,
+  stem_color,
+  sun_exposure,
+
+  soil,
+  water_requirements,
+  hardiness_zone,
+
+  poisonous_bool,
+  edible_bool,
+  skin_irritant_bool,
+
+  isDangerous,
+  dangerous_description,
+  images,
+  cb) {
+
+  shrubDetail = {
+      
+    common_name: common_name,
+    latin_name: latin_name,
+    brief_description: brief_description,
+
+    plant_type: palnt_type,
+    plant_shape: plant_shape,
+    bloom_time: bloom_time,
+
+    dimensions: dimensions,
+    flower_bool: flower_bool,
+    flower_color: flower_color,
+
+    flower_dimensions: flower_description,
+    fruit_bool: fruit_bool,
+    fruit_color: fruit_color,
+
+    leaf_color: leaf_color,
+    leaf_dimensions: leaf_dimensions,
+    leaf_type: leaf_type,
+
+    bark_color: bark_color,
+    stem_color: stem_color,
+    sun_exposure: sun_exposure,
+
+    soil: soil,
+    water_requirements: water_requirements,
+    hardiness_zone: hardiness_zone,
+
+    poisonous_bool: poisonous_bool,
+    edible_bool: edible_bool,
+    skin_irritant_bool: skin_irritant_bool,
+
+    isDangerous: isDangerous,
+    dangerous_description: dangerous_description,
+    images: images,
+
+  }
   
-    const shrub = new Shrub(shrubDetail);
-        
-    shrub.save(function (err) {
-        if (err) {
-        cb(err, null)
-        return
-        }
-        console.log('New Shrub: ' + shrub);
-        shrubs.push(shrub)
-        cb(null, shrub)
-    });
+  const shrub = new Shrub(shrubDetail);
+      
+  shrub.save(function (err) {
+    if (err) {
+    cb(err, null)
+    return
+    }
+    console.log('New Shrub: ' + shrub);
+    shrubs.push(shrub)
+    cb(null, shrub)
+  });
 }
 
 
 // Input the data for each shrub
 function createShrubs(cb) {
-    async.series([
-        function(callback) {
-          shrubCreate('Patrick', 'Rothfuss', '1973-06-06', false, callback);
-        },
-        function(callback) {
-          shrubCreate('Ben', 'Bova', '1932-11-8', false, callback);
-        },
-        ],
-        // optional callback
-        cb);
+  async.series([
+    function(callback) {
+      shrubCreate(
+        false, 
+        callback
+      );
+    },
+    function(callback) {
+      shrubCreate(
+        'Ben', 
+        callback
+      );
+    },
+    ],
+    // optional callback
+    cb
+  );
 }
 
 // call the create functions
 async.series([
-    createShrubs,
+  createShrubs,
 ],
 // Optional callback
 function(err, results) {
-    if (err) {
-        console.log('FINAL ERR: ' + err);
-    }
-    else {
-        console.log('Shrubs: ' + scrubs);
-    }
-    // All done, disconnect from database
-    mongoose.connection.close();
+  if (err) {
+    console.log('FINAL ERR: ' + err);
+  }
+  else {
+    console.log('Shrubs: ' + scrubs);
+  }
+  // All done, disconnect from database
+  mongoose.connection.close();
 });
