@@ -14,8 +14,19 @@ function ApiCall() {
     });
   }, []);
   
+  const [img, setImg] = useState("Awaiting API images...");
+
+  useEffect(() => {
+    axios.get("http://localhost:9000/images/arboricola/arboricola-0.png")
+    .then(res => {
+      setImg(res.data);
+    }).catch(err => {
+      console.log(err);
+    });
+  }, []);
 
   console.log(data);
+  console.log(img);
 
   // Displays a waiting message if API hasn't returned yet
   if (data === "Awaiting API data...") {
@@ -36,6 +47,9 @@ function ApiCall() {
               <li key={shrub.toString()}>{shrub}</li>
             ))}
           </ul>
+
+        
+          <img src="" />
 
       </div>
     );

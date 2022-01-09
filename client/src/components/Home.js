@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ApiCall from './ApiCall';
 
 
 function Home() {
@@ -8,7 +9,7 @@ function Home() {
       <div>
 
           <h2>Home</h2>
-
+          <ApiCall />
       </div>
 
     );

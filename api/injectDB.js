@@ -125,7 +125,35 @@ function createShrubs(cb) {
   async.series([
     function(callback) {
       shrubCreate(
-        false, 
+        ["Arboricola", "Dwarf Umbrella tree"],
+        "Schefflera arboricola",
+        "Scheffleras are large and graceful tropical plants often used in interior decorating. They are superb long-lived houseplants.",
+        ["evergreen", "shrub"],
+        ["Hedge", "Round"],
+        "This plant does not bloom.",
+        ["3-8FT tall", "3-8FT wide"],
+        false,
+        [" - "],
+        " - ",
+        false,
+        [" - "],
+        ["Yellow", "Medium Green"],
+        ["3-5 inches long", "1-3 inches wide"],
+        ["oval"],
+        ["Yellow", "Medium Green"],
+        ["Yellow", "Medium Green"],
+        "Sun or Shade",
+        "well-drained",
+        "average",
+        ["9b", "10a", "10b", "11a", "11b"],
+        true,
+        false,
+        false,
+        true,
+        "Schefflera poisoning is due to the species containing 'sharp' calcium oxalate crystals that are insoluble and damage the cells and tissues of the animals ingesting them. For their own safety, children and household pets should be kept away from consuming this plant. In animals, the resulting damage (swelling) of exposed tissues and digestive tract may be fatal to the animal. Signs of poisoning in pets can include: oral irritation, intense burning and irritation of the mouth, lips, tongue, excessive drooling, vomiting, difficulty in swallowing",
+
+        ["string to find image in api/public/images/aroricola_0.png directory"],
+        
         callback
       );
     },

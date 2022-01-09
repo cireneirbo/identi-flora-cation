@@ -6,7 +6,7 @@ const ShrubSchema = new Schema(
 
     {
         
-        common_name: {type: String, required: true, maxLength: 100},
+        common_name: {type: Array, required: true, maxLength: 100},
         latin_name: {type: String, required: true, maxLength: 100},
         brief_description: {type: String, required: true, maxLength: 1000},
 
