@@ -75,6 +75,7 @@ function ApiCall() {
             ))}
           </ul>
 
+          <p>{data.shrub_list[0].bloom_time}</p>
           <input 
             type="file"
             onChange={(e) => {
