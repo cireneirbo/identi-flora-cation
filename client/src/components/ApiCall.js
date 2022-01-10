@@ -27,30 +27,7 @@ function ApiCall() {
   }, []);
 
 
-  const [baseImage, setBaseImage] = useState("");
-
-
-  const uploadImage = async (e) => {
-    const file = e.target.files[0];
-    const base64 = await convertBase64(file);
-    setBaseImage(base64);
-    console.log(base64);
-  }
-
-  const convertBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
-
-      fileReader.onload = () => {
-        resolve(fileReader.result);
-      }
-
-      fileReader.onerror = (error) => {
-        reject(error);
-      }
-    })
-  }
+  
 
   console.log(data);
   //console.log(img);
@@ -76,14 +53,10 @@ function ApiCall() {
           </ul>
 
           <p>{data.shrub_list[0].bloom_time}</p>
-          <input 
-            type="file"
-            onChange={(e) => {
-              uploadImage(e);
-            }} 
-          />
-          <img src={baseImage} height="200px" />
+          
+          
           <img src={img} />
+          <img src={data.shrub_list[0].images[0]} />
 
       </div>
     );
