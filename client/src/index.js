@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Home from './components/Home';
+import About from './components/About';
 import List from './components/List';
 import Search from './components/Search';
 import Detail from './components/Detail';
@@ -21,6 +22,7 @@ ReactDOM.render(
             <Route path=":detailId" element={<Detail />} />
           </Route>
           <Route path="search" element={<Search />} />
+          <Route path="about" element={<About />} />
           <Route
             path="*"
             element={
