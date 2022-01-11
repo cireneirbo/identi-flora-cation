@@ -1,0 +1,51 @@
+common_name: Coontie
+
+latin_name: Zamia integrifolia
+
+brief_description: Like all cycads, the coontie has ancient origins. But this Florida plant is the only cycad native to North America. It's also the preferred food source for larvae of the rare Atala butterfly. 
+
+plant_type: shurb, evergreen
+
+plant_shape: round
+
+bloom_time: n
+
+dimensions: 2-3 ft tall by 3-5 ft wide
+
+flower_bool: n
+
+flower_color: n
+
+flower_dimensions: n
+
+fruit_bool: y
+
+fruit_color: orange, brown
+
+leaf_color: green
+
+leaf_dimensions: 6inches - 1 ft long, 1 inch wide
+
+leaves_type: even pinnate
+
+bark_color: green
+
+stem_color: green
+
+sun_exposure: full sun, partial shade, shade
+
+soil: well drained
+
+water_requirements: low
+
+USDA_hardiness_zone: 8a, 8b, 9a, 9b, 10a, 10b, 11b
+
+poisonous_bool: y
+
+edible_bool: n
+
+skin_irritant_bool: n
+
+Is it dangerous? Seeds, foliage, and roots are toxic.
+
+
