@@ -7,6 +7,7 @@
     - [x] Home
     - [x] Full List
     - [x] Search
+    - [x] About
     - [ ] Detail
 - [ ] Add Styling and CSS
 - [ ] Make it look nice
