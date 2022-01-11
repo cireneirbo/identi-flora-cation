@@ -1,0 +1,51 @@
+common_name: Burford Holly
+
+latin_name: Ilex cornuta 'Burfordii'
+
+brief_description: Burdford Holly is fast growing, dense, and, because it tolerates severe pruning, can be trimmed to form a rounded large shrub, small tree (when lower branches are removed), or hedge.
+
+plant_type: evergreen
+
+plant_shape: Round
+
+bloom_time: Spring
+
+dimensions: 4-8ft tall, 4-8ft wide
+
+flower_bool: y
+
+flower_color: white
+
+flower_dimensions: < 1 inch
+
+fruit_bool: y
+
+fruit_color: red
+
+leaf_color: Green
+
+leaf_dimensions: 1-3 inches long, 1-3 inch wide
+
+leaves_type: elliptical, oblong
+
+bark_color: light grey
+
+stem_color: green
+
+sun_exposure: Full sun, Partial Sun
+
+soil: good drainage, moist, occasionally dry
+
+water_requirements: moderate
+
+USDA_hardiness_zone: 7a, 7b, 8a, 8b, 9a, 9b
+
+poisonous_bool: y
+
+edible_bool: n
+
+skin_irritant_bool: n
+
+Is it dangerous? Minor toxicity. Ingestion may cause vomiting, diarrhea, or other illness in humans.
+
+
