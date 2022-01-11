@@ -19,72 +19,65 @@ function List() {
     });
   }, []);
 
-  const [dataArray, setDataArray] = useState([]);
-
-  
 
   console.log(data);
-  //console.log(img);
   
 
   // Displays a waiting message if API hasn't returned yet
   if (data === "" || isProcessed === false) {
+
     // process axios data
     if (data !== "") {
-      let tempArr = [];
-      for(let i = 0; i < data.shrub_list.length; i++) {
-        tempArr.push(data.shrub_list[i]);
-      }
-      //console.log(tempArr);
-      setDataArray(tempArr);
+
       setIsProcessed(true);
-      tempArr = [];
+      
     }
     return (
       <div>
-        <h2>List</h2>
         {waitingMessage}
       </div>
     );
   }
   // Return the data
   else {
-
-    //console.log(typeof tempArr);
     return (
-      // <div>
-      //   <Article shrub={data.shrub_list[0]}/>
-      // </div>
       
-      <div>
-          <h2>{data.title}</h2>
+      <div id="main">
+				
+        <h2>{data.title}</h2>
 
+        <div>
           <ul>
             {data.shrub_list.map(shrub => (
-                
               
-              <li key={shrub._id}>{shrub.common_name[0]}</li>
-            ))}
-          </ul>
+            // <li >{shrub.common_name[0]}</li>
 
-          <ul>
-            {dataArray.map(shrub => (
-                <li key={shrub._id}>{shrub._id}</li>
-              
-              // <li key={shrub._id}>{shrub}</li>
-            ))}
-          </ul>
-
-          <p>{data.shrub_list[0].bloom_time}</p>
-          <p>{data.shrub_list[0]._id}</p>
-          <section class="tiles">
             
-          </section>
+    
+              <li key={shrub._id}>
+                <img src={shrub.images[0]} />
+                <h3>{shrub.common_name[0]}</h3>
+                <p>{shrub.brief_description}</p>
+              </li>
+    
+  
+
+            
+            ))}
+          </ul>
+        </div>
           
-          {/* <img src={img} /> */}
-          <img src={data.shrub_list[0].images[0]} />
-{/* <Outlet /> */}
+
+
+          {/* <p>{data.shrub_list[0].bloom_time}</p>
+          <p>{data.shrub_list[0]._id}</p> */}
+          {/* <img src={data.shrub_list[0].images[0]} /> */}
+
+        {/* <Outlet /> */}
+
+        
       </div>
+              
     );
   }
 }

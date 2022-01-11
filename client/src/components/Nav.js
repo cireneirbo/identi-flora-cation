@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <div>
+    <div className="nav-bar">
       <h1>Identi-Flora-Cation</h1>
 
       <nav>

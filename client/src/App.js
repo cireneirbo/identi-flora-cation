@@ -10,24 +10,14 @@ import './App.css';
 
 function App() {
 
-
   return (
-
     <div className="App">
       
       <Nav />
-
-      <header className="App-header">
-      
-      
-        <Outlet />
-      
-      </header>
+      <Outlet />
       
     </div>
-
   );
-  
 }
 
 

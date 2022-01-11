@@ -1,19 +1,17 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #f4f1e6;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-bar {
+  margin: 20px;
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,17 +20,49 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
-.App-link {
+ .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* List All Shrubs */
+div {
+  margin: 20px;
+}
+
+ul {
+  list-style-type: none;
+  /* width: 500px; */
+  text-align: left;
+  min-width: 500px;
+  max-width: 1200px;
+}
+
+h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+li img {
+  float: left;
+  margin: 0 15px 0 0;
+  max-width: 25%;
+  min-width: 75px;
+  box-shadow: 1px 1px;
+}
+
+li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+
+li {
+  padding: 10px;
+  display: inline-block;
+  overflow: auto;
+}
+
+li:hover {
+  background: rgb(230, 230, 230);
+  cursor: pointer;
 }
