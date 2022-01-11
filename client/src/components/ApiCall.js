@@ -3,7 +3,11 @@ import axios from 'axios';
 
 function ApiCall() {
 
-  const [data, setData] = useState("Awaiting API data...");
+  const waitingMessage = "Awaiting API data...";
+
+  const [isProcessed, setIsProcessed] = useState(false);
+
+  const [data, setData] = useState("");
 
   useEffect(() => {
     axios.get("http://localhost:9000/")
@@ -13,52 +17,63 @@ function ApiCall() {
       console.log(err);
     });
   }, []);
-  
-  const [img, setImg] = useState("Awaiting API images...");
 
-  useEffect(() => {
-    /*axios.get("http://localhost:9000/images/arboricola/arboricola-0.png")
-    .then(res => {
-      setImg(res.data);
-    }).catch(err => {
-      console.log(err);
-    });*/
-    setImg("")
-  }, []);
-
+  const [dataArray, setDataArray] = useState([]);
 
   
 
   console.log(data);
   //console.log(img);
+  
 
   // Displays a waiting message if API hasn't returned yet
-  if (data === "Awaiting API data...") {
+  if (data === "" || isProcessed === false) {
+    // process axios data
+    if (data !== "") {
+      let tempArr = [];
+      for(let i = 0; i < data.shrub_list.length; i++) {
+        tempArr.push(data.shrub_list[i]);
+      }
+      console.log(tempArr);
+      setDataArray(tempArr);
+      setIsProcessed(true);
+      //tempArr = [];
+    }
     return (
       <div>
-        {data}
+        {waitingMessage}
       </div>
     );
   }
   // Return the data
   else {
+
+    console.log(typeof tempArr);
     return (
       <div>
-          <h2>{data.title}</h2>
-
-          <ul>
-            {data.temp_list.map(shrub => (
-              <li key={shrub.toString()}>{shrub}</li>
-            ))}
-          </ul>
-
-          <p>{data.shrub_list[0].bloom_time}</p>
-          
-          
-          <img src={img} />
-          <img src={data.shrub_list[0].images[0]} />
-
+        {/* {dataArray} */}
       </div>
+      
+      // <div>
+      //     <h2>{data.title}</h2>
+
+      //     {/* <ul>
+      //       {data.shrub_list.map(shrubs => (
+      //         for(let i = 0; )
+      //           <li key={shrub._id}>{shrub}</li>
+      //         ))
+      //         // <li key={shrub._id}>{shrub}</li>
+      //       ))}
+      //     </ul> */}
+
+      //     <p>{data.shrub_list[0].bloom_time}</p>
+      //     <p>{data.shrub_list[0]._id}</p>
+          
+          
+      //     {/* <img src={img} /> */}
+      //     <img src={data.shrub_list[0].images[0]} />
+
+      // </div>
     );
   }
 }
