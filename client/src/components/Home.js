@@ -9,7 +9,7 @@ function Home() {
       <div>
 
           <h2>Home</h2>
-          {/* <ApiCall /> */}
+          <p>This is a web app designed to let users identify plants they see in nature. </p>
       </div>
 
     );

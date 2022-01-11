@@ -57,6 +57,7 @@ function List() {
               <li key={shrub._id}>
                 <img src={shrub.images[0]} />
                 <h3>{shrub.common_name[0]}</h3>
+                <p><b>{shrub.latin_name}</b></p>
                 <p>{shrub.brief_description}</p>
               </li>
     

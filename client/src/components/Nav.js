@@ -6,10 +6,10 @@ function Nav() {
     <div className="nav-bar">
       <h1>Identi-Flora-Cation</h1>
 
-      <nav>
-        <Link to="/">Home</Link> |{" "}
-        <Link to="/list">List</Link> |{" "}
-        <Link to="/search">Search</Link>
+      <nav className="App-link"> 
+        <Link to="/" className="App-link">Home</Link> |{" "}
+        <Link to="/list" className="App-link">List</Link> |{" "}
+        <Link to="/search" className="App-link">Search</Link>
       </nav>
 
     </div>

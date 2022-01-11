@@ -1,5 +1,6 @@
 .App {
   /* text-align: center; */
+  color: rgb(94, 94, 94);
   
 }
 
@@ -23,7 +24,7 @@ body {
 } */
 
  .App-link {
-  color: #61dafb;
+  color: #61c2dd;
 }
 
 
