@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function ApiCall() {
+function ApiCall(props) {
 
   const waitingMessage = "Awaiting API data...";
 
@@ -50,30 +50,30 @@ function ApiCall() {
 
     console.log(typeof tempArr);
     return (
-      <div>
-        {/* {dataArray} */}
-      </div>
-      
       // <div>
-      //     <h2>{data.title}</h2>
-
-      //     {/* <ul>
-      //       {data.shrub_list.map(shrubs => (
-      //         for(let i = 0; )
-      //           <li key={shrub._id}>{shrub}</li>
-      //         ))
-      //         // <li key={shrub._id}>{shrub}</li>
-      //       ))}
-      //     </ul> */}
-
-      //     <p>{data.shrub_list[0].bloom_time}</p>
-      //     <p>{data.shrub_list[0]._id}</p>
-          
-          
-      //     {/* <img src={img} /> */}
-      //     <img src={data.shrub_list[0].images[0]} />
-
+      //   <Article shrub={data.shrub_list[0]}/>
       // </div>
+      
+      <div>
+          <h2>{data.title}</h2>
+
+          {/* <ul>
+            {data.shrub_list.map(shrubs => (
+              for(let i = 0; )
+                <li key={shrub._id}>{shrub}</li>
+              ))
+              // <li key={shrub._id}>{shrub}</li>
+            ))}
+          </ul> */}
+
+          <p>{data.shrub_list[0].bloom_time}</p>
+          <p>{data.shrub_list[0]._id}</p>
+          
+          
+          {/* <img src={img} /> */}
+          <img src={data.shrub_list[0].images[0]} />
+
+      </div>
     );
   }
 }

@@ -9,7 +9,7 @@ function Home() {
       <div>
 
           <h2>Home</h2>
-          <ApiCall />
+          {/* <ApiCall /> */}
       </div>
 
     );
