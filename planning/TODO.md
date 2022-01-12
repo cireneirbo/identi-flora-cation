@@ -14,7 +14,7 @@
 - [ ] Get the Search page to return the data from the form selections
 - [ ] Have details page work 
 - [ ] Add href links to home (or remove the anchor tag)
-- [ ] Add Ben's link to About page bios
+- [x] Add Ben's link to About page bios
 - [ ] Add a custom favicon.ico
 
 ### Express
@@ -24,12 +24,14 @@
     - [x] Search
     - [x] Detail
 - [x] Adjust `Shrub` class constructor to use the new params
+- [ ] Change flower-dimensions to an array type
 
 ### MongoDB
 - [ ] Add the different shrubs to database using `api/injectDB.js`
 - [ ] Use ConvertBase64 Component to get the image data to add to the database for each image
 - [ ] Remove the 2 copies of the Arboricola from the database
 - [ ] add 19/20 more.
+- [ ] Change flower-dimensions to an array
 
 ## Hosting
 - [ ] Set up [Heroku](https://www.heroku.com/) dyno
