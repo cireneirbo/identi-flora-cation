@@ -14,6 +14,7 @@
 - [ ] Get the Search page to return the data from the form selections
 - [ ] Have details page work 
 - [ ] Add href links to home (or remove the anchor tag)
+- [ ] Add Ben's link to About page bios
 
 ### Express
 - [x] Send data to frontend for
@@ -32,6 +33,7 @@
 ## Hosting
 - [ ] Set up [Heroku](https://www.heroku.com/) dyno
 - [ ] Check that the app works from Heroku
+- [ ] Have two deploys, one frontend and one backend
 
 ## Submitting Project to Hackathon
 - [ ] Fill out [template](https://dev.to/new/atlashackathon) on Dev.to

@@ -1,16 +1,88 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
 function Search() {
+/// from list
+  const waitingMessage = "Sorry! Still waiting for the API data... \nTry the search button again in a moment or two.";
+  const urlApi = "http://localhost:9000/";
 
-  const handleForm = (e) => {
-    e.preventDefault();
+  const [isProcessed, setIsProcessed] = useState(false);
+
+  const [data, setData] = useState("");
+
+  useEffect(() => {
+    axios.get(urlApi)
+    .then(res => {
+      setData(res.data);
+    }).catch(err => {
+      console.log(err);
+    });
+  }, []);
+
+  const [searchMessage, setSearchMessage] = useState("")
+
+
+  console.log(data);
+
+  
+  
+/*
+  
+  // Return the data
+  else {
+    return (
+      */
+      // <div id="main">
+				
+      //   <h2>{data.title}</h2>
+
+        // <div>
+        //   <ul>
+        //     {data.shrub_list.map(shrub => (
+              
+        //     // <li >{shrub.common_name[0]}</li>
+
+            
+    
+        //       <li key={shrub._id}>
+        //         <img src={shrub.images[0]} />
+        //         <h3>{shrub.common_name[0]}</h3>
+        //         <p><b>{shrub.latin_name}</b></p>
+        //         <p>{shrub.brief_description}</p>
+        //       </li>
+    
+  
+
+            
+        //     ))}
+        //   </ul>
+        // </div>
+          
+
+
+          {/* <p>{data.shrub_list[0].bloom_time}</p>
+          <p>{data.shrub_list[0]._id}</p> */}
+          {/* <img src={data.shrub_list[0].images[0]} /> */}
+
+        {/* <Outlet /> */}
+
+{/*         
+      </div>
+              
+    );
+  } */}
+
+  ///
+  const handleForm = (event) => {
+    event.preventDefault();
     console.log("Form Successful Handled!");
 
     // display message for user while performing search
-    let searchingMessage = document.getElementById("searching-message");
-    searchingMessage.textContent = "Searching our database for matches...";
-
+    // let searchingMessage = document.getElementById("searching-message");
+    // searchingMessage.textContent = "Searching our database for matches...";
+    setSearchMessage("Searching our database for matches...");
+    //callApi(urlApi);
     // get inputs from form
     let leafColor = document.getElementById("leaf-color");
     let barkColor = document.getElementById("bark-color");
@@ -20,13 +92,28 @@ function Search() {
     Bark Color: ${barkColor.value}
     `);
     
+    // Displays a waiting message if API hasn't returned yet
+    if (data === "" || isProcessed === false) {
 
+      // process axios data
+      if (data !== "") {
+        console.log()
+        setIsProcessed(true);
+        
+      }
+      else {
+        alert(`${waitingMessage}`)
+      }
+      
+    }
 
 
 
     // Change search message once search is complete
-    searchingMessage.textContent = "Displaying Results"
+    setSearchMessage("Displaying Results");
+    
     //return ();
+    // console.log(data + "empty?");
   }
 
 
@@ -195,10 +282,28 @@ function Search() {
         </form>
 
         <div>
-          <h3 id="searching-message"></h3>
+          <h3 id="searching-message">{searchMessage}</h3>
         </div>
-        
+
         <hr />
+
+        {/* Display the Search Results */}
+        <div>
+          <ul>
+            {data !== "" && 
+              searchMessage === "Displaying Results" &&
+              data.shrub_list.map(shrub => (
+                
+                <li key={shrub._id}>
+                  <img src={shrub.images[0]} />
+                  <h3>{shrub.common_name[0]}</h3>
+                  <p><b>{shrub.latin_name}</b></p>
+                  <p>{shrub.brief_description}</p>
+                </li>
+    
+            ))}
+          </ul>
+        </div>
 
     </div>
   );
