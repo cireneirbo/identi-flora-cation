@@ -15,6 +15,7 @@
 - [ ] Have details page work 
 - [ ] Add href links to home (or remove the anchor tag)
 - [ ] Add Ben's link to About page bios
+- [ ] Add a custom favicon.ico
 
 ### Express
 - [x] Send data to frontend for

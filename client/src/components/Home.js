@@ -7,7 +7,8 @@ function Home() {
       <div>
 
           <h2>Home</h2>
-          <p>This is a web app designed to let users identify plants they see in nature. </p>
+          <li>This is a web app designed to let users identify plants they see in nature. </li>
+          <hr />
 
           <ul>
             <h4>Search</h4>

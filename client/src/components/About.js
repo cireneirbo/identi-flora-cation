@@ -4,9 +4,12 @@ function About() {
 
     return (
 
-      <ul>
+      <div>
+        <h2>About</h2>
+        <li>Feel free to reach out to us with any questions.</li>
+        <hr />
 
-          <h2>About</h2>
+        <ul>
 
           <h3>The App</h3>
           <li>This is a web app designed to let users identify plants they see in nature, specifically in SouthWest Florida, USA.</li>
@@ -31,7 +34,8 @@ function About() {
             <li>Find me at <a href="https://github.com/drawdeneirbo" target="_blank">my GitHub</a>.</li>
           </ul>
 
-      </ul>
+        </ul>
+      </div>
 
     );
 

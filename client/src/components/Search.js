@@ -3,86 +3,39 @@ import axios from 'axios';
 
 
 function Search() {
-/// from list
-  const waitingMessage = "Sorry! Still waiting for the API data... \nTry the search button again in a moment or two.";
-  const urlApi = "http://localhost:9000/";
+
+  const waitingMessage = "Sorry! Still waiting for the API data... \nThe search will load in a moment or two.";
+  const urlApi = "http://127.0.0.1:9000/";
 
   const [isProcessed, setIsProcessed] = useState(false);
 
   const [data, setData] = useState("");
 
   useEffect(() => {
-    axios.get(urlApi)
-    .then(res => {
-      setData(res.data);
-    }).catch(err => {
-      console.log(err);
-    });
+    if(isProcessed == false) {
+      axios.get(urlApi)
+      .then(res => {
+        setData(res.data);
+      }).catch(err => {
+        console.log(err);
+      });
+      return setIsProcessed(true);
+    }
   }, []);
 
   const [searchMessage, setSearchMessage] = useState("")
 
-
+  
   console.log(data);
 
-  
-  
-/*
-  
-  // Return the data
-  else {
-    return (
-      */
-      // <div id="main">
-				
-      //   <h2>{data.title}</h2>
 
-        // <div>
-        //   <ul>
-        //     {data.shrub_list.map(shrub => (
-              
-        //     // <li >{shrub.common_name[0]}</li>
-
-            
-    
-        //       <li key={shrub._id}>
-        //         <img src={shrub.images[0]} />
-        //         <h3>{shrub.common_name[0]}</h3>
-        //         <p><b>{shrub.latin_name}</b></p>
-        //         <p>{shrub.brief_description}</p>
-        //       </li>
-    
-  
-
-            
-        //     ))}
-        //   </ul>
-        // </div>
-          
-
-
-          {/* <p>{data.shrub_list[0].bloom_time}</p>
-          <p>{data.shrub_list[0]._id}</p> */}
-          {/* <img src={data.shrub_list[0].images[0]} /> */}
-
-        {/* <Outlet /> */}
-
-{/*         
-      </div>
-              
-    );
-  } */}
-
-  ///
   const handleForm = (event) => {
+    // prevent page reload when button is pressed
     event.preventDefault();
-    console.log("Form Successful Handled!");
 
     // display message for user while performing search
-    // let searchingMessage = document.getElementById("searching-message");
-    // searchingMessage.textContent = "Searching our database for matches...";
     setSearchMessage("Searching our database for matches...");
-    //callApi(urlApi);
+    
     // get inputs from form
     let leafColor = document.getElementById("leaf-color");
     let barkColor = document.getElementById("bark-color");
@@ -93,21 +46,12 @@ function Search() {
     `);
     
     // Displays a waiting message if API hasn't returned yet
-    if (data === "" || isProcessed === false) {
-
-      // process axios data
-      if (data !== "") {
-        console.log()
-        setIsProcessed(true);
-        
-      }
-      else {
-        alert(`${waitingMessage}`)
-      }
-      
+    if (data === "") {
+      // notify user
+      alert(`${waitingMessage}`);
+    } else {
+      console.log(data.shrub_list)
     }
-
-
 
     // Change search message once search is complete
     setSearchMessage("Displaying Results");
@@ -290,6 +234,7 @@ function Search() {
         {/* Display the Search Results */}
         <div>
           <ul>
+            {/* Check that data has returned api data and that the user has clicked the search button before populating */}
             {data !== "" && 
               searchMessage === "Displaying Results" &&
               data.shrub_list.map(shrub => (

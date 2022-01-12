@@ -5,18 +5,22 @@ import axios from 'axios';
 
 function List() {
   const waitingMessage = "Awaiting API data...";
+  const urlApi = "http://127.0.0.1:9000/";
 
   const [isProcessed, setIsProcessed] = useState(false);
 
   const [data, setData] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:9000/")
-    .then(res => {
-      setData(res.data);
-    }).catch(err => {
-      console.log(err);
-    });
+    if(isProcessed == false) {
+      axios.get(urlApi)
+      .then(res => {
+        setData(res.data);
+      }).catch(err => {
+        console.log(err);
+      });
+      return setIsProcessed(true);
+    }
   }, []);
 
 
@@ -25,15 +29,12 @@ function List() {
 
   // Displays a waiting message if API hasn't returned yet
   if (data === "" || isProcessed === false) {
-
-    // process axios data
-    if (data !== "") {
-
-      setIsProcessed(true);
-      
-    }
     return (
-      <div>
+      <div id="main">
+        <h2>Shrub List</h2>
+        <li>The complete list of all of our stored plants.</li>
+        <hr />
+
         {waitingMessage}
       </div>
     );
@@ -44,7 +45,9 @@ function List() {
       
       <div id="main">
 				
-        <h2>{data.title}</h2>
+        <h2>Shrub List</h2>
+        <li>The complete list of all of our stored plants.</li>
+        <hr />
 
         <div>
           <ul>
