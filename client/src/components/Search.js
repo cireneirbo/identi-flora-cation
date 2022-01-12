@@ -31,15 +31,28 @@ function Search() {
 
   const [searchData, setSearchData] = useState("");
 
+  // useEffect(() => {
+  //   if(isSearched == false) {
+      
+  //     setSearchData(searchParams);
+      
+  //     return () => {
+  //       setIsSearched(true)
+  //     };
+  //   }
+  // }, []);
+
+  let tempArr = [];
   
   console.log(data);
+  console.log(searchData);
 
   // populate the search data after search button pressed
   const createSearchData = (params) => {
 
     console.log(data.shrub_list);
 
-      let tempArr = [];
+      //let tempArr = [];
       
 
       for(let i = 0; i < data.shrub_list.length; i++) {
@@ -54,7 +67,7 @@ function Search() {
              tempArr.push(data.shrub_list[i]);
           // }
         }
-
+/*
         // barkColors, 
         if(data.shrub_list[i].bark_color.includes(params[1].value)) {
           console.log("yes");
@@ -93,7 +106,7 @@ function Search() {
         // leafDimensions,
         if(data.shrub_list[i].leaf_dimensions.includes(params[8].value)) {
           console.log("yes");
-        }
+        }*/
 
         // flowerDimensions
         // if(data.shrub_list[i].flower_dimensions.includes(params[9].value)) {
@@ -102,22 +115,25 @@ function Search() {
 
       }
 
-      console.log(params[0].value);
-      console.log("tempArr =" + tempArr[0]._id + "end");
+      //console.log(params[0].value);
+      console.log("tempArr = " + tempArr[0]._id + " end");
       //setSearchData(tempArr);
       //tempArr = [];
       
-      setIsSearched(true);
-      if (isSearched == true) {
+      //setIsSearched(true);
+      /*if (tempArr !== []) {
         setSearchData(tempArr); // doesn't do this for some reason
         console.log(searchData);
-      }
+      }*/
       
-
+      
       // Change search message once search is complete
-      if(searchData !== "") {
-        setSearchMessage("Displaying Results");
+      // if(searchData !== "") {
+        if(tempArr !== []) {
+        //setSearchMessage("Displaying Results");
+        console.log(tempArr)
       }
+      // return( tempArr );
   }
 
   const handleForm = (event) => {
@@ -162,7 +178,13 @@ function Search() {
     if (searchData === "" && data !== "") {
       setSearchMessage("Searching our database for matches...");
       createSearchData(searchParams);
+      // setSearchData(async () => {
+      //   //await createSearchData(searchParams);
+      //   await console.log("setsearchmess" + createSearchData(searchParams))
+      // })
+      
     }
+
 
   }
 
@@ -341,9 +363,12 @@ function Search() {
         <div>
           <ul>
             {/* Check that data has returned api data and that the user has clicked the search button before populating */}
-            {searchData !== "" && 
+            {/* {searchData !== "" && 
               searchMessage === "Displaying Results" &&
-              searchData.shrub_list.map(shrub => (
+              searchData.shrub_list.map(shrub => ( */}
+            {tempArr !== [] && 
+              searchMessage === "Searching our database for matches..." &&
+              tempArr.map(shrub => (
                 
                 <li key={shrub.common_name[0]}>
                   <img src={shrub.images[0]} />
