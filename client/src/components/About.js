@@ -1,4 +1,5 @@
 import React from 'react';
+import ConvertBase64 from './ConvertBase64';
 
 function About() {
 
@@ -35,6 +36,8 @@ function About() {
           </ul>
 
         </ul>
+
+        <ConvertBase64 />
       </div>
 
     );
