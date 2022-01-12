@@ -1,0 +1,66 @@
+common_name: Dwarf Allamanda
+
+latin_name: Allamanda cathartica
+
+brief_description: Allamanda forms a sprawling shrub or woody climber that tends to sprawl and twine itself around a support and will need to be tied to a trellis or other support. If grown outdoors in the landscape, the plants should be cut back and overwintered as indoor container plants before the first freeze. 
+
+plant_type: houseplant, poisonous, shrub, vine
+
+plant_shape: climbing, creeping, spreading
+
+bloom_time: annual
+
+dimensions: < 1ft up to 19ft or more
+
+flower_bool: y
+
+flower_color: gold/yellow
+
+flower_dimensions: 3-6 inches
+
+fruit_bool: y
+
+fruit_color: orange
+
+leaf_color: green
+
+leaf_dimensions: 1-3 inches long, 1-3 inches wide
+
+leaves_type: simple
+
+bark_color: green
+
+stem_color: green
+
+sun_exposure: Full Sun
+
+soil: good drainage, occasionally wet
+
+water_requirements:
+
+USDA_hardiness_zone:
+
+poisonous_bool: y
+
+edible_bool: n
+
+skin_irritant_bool: y
+
+Is it dangerous? y
+
+Poison Severity:
+    Low
+Poison Symptoms:
+    Poisonous through: Ingestion, dermatitis. Sap causes skin and eye irritation. TOXIC ONLY IF LARGE QUANTITIES EATEN; SKIN IRRITATION MINOR OR LASTING ONLY FOR A FEW MINUTES. Symptoms may include fever, swollen lips, thirst, nausea, diarrhea; skin irritation upon contact with cell sap.
+Poison Toxic Principle:
+    Unknown
+Causes Contact Dermatitis:
+    Yes
+Poison Part:
+    Bark
+    Flowers
+    Fruits
+    Leaves
+    Roots
+    Seeds
+    Stems
