@@ -35,9 +35,10 @@ function Search() {
         <h2>Search</h2>
         <ul>
           <li>Select your search parameters from the drop-down menus below.</li>
+          <br></br>
           <li>You can use as many or as few as you'd like.</li>
         </ul>
-        
+        <hr />
 
         <form className="form">
           {/* Plant - overall */}
@@ -196,6 +197,8 @@ function Search() {
         <div>
           <h3 id="searching-message"></h3>
         </div>
+        
+        <hr />
 
     </div>
   );

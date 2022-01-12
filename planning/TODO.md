@@ -11,13 +11,16 @@
     - [ ] Detail
 - [ ] Add Styling and CSS
 - [ ] Make it look nice
+- [ ] Get the Search page to return the data from the form selections
+- [ ] Have details page work 
+- [ ] Add href links to home (or remove the anchor tag)
 
 ### Express
-- [ ] Send data to frontend for
-    - [ ] Home
+- [x] Send data to frontend for
+    - [x] Home
     - [x] Full List
-    - [ ] Search
-    - [ ] Detail
+    - [x] Search
+    - [x] Detail
 - [x] Adjust `Shrub` class constructor to use the new params
 
 ### MongoDB
