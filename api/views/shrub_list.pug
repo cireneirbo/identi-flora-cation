@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+
+  ul
+    each shrub in shrub_list
+      li 
+        a(href=shrub.url) #{shrub.common_name[0]}
+        if shrub.lifespan
+          |  (#{shrub.lifespan})
+        else 
+          |  Hi
+    else
+      li Oh no! There are no shrubs!

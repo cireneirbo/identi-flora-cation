@@ -15,6 +15,8 @@ function About() {
           <li>This is a web app designed to let users identify plants they see in nature, specifically in SouthWest Florida, USA.</li>
           <br />
           <li>There are custom drawings created to help users identify a plant's key features, which can be difficult with just pictures alone.</li>
+          <li>We decided to use custom drawings for the plants in order to sperate the viewer from reality and have them focus on the main key structures of the plants.</li>
+          <li>Using black lines for the plant details allows us to highlight the main identifiers of the plants so it can be easier to find what they are looking for - or to dismiss something altogether.</li>
 
 
           <h3>The Team</h3>
@@ -29,11 +31,11 @@ function About() {
 
           <ul>
             <h4>Ben - Artist</h4>
-            <li>An animator/illustrator/barbarian who smashes things with sticks (plays drums).</li>
+            <li>A freelance illustrator/animator who loves using open source programs to create while drinking too much coffee.</li>
             <br></br>
             <li>Find me at <a href="https://github.com/drawdeneirbo" target="_blank">my GitHub</a>.</li>
           </ul>
-
+          
         </ul>
       </div>
 

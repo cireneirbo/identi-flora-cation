@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p yup
+  
+  each item in shrub_search_list 
+    li #{item}
+
+  p #{shrub_search_list.plant_type}
+
+  each item in searchedData
+    li #{item}
+  
+

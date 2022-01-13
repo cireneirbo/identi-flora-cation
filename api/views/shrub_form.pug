@@ -1,0 +1,135 @@
+extends layout
+
+block content
+  div
+    h2=title
+    ul
+      li Select your search parameters from the drop-down menus below.
+      br
+      li You can use as many or as few as you'd like.
+    
+    hr
+
+  form(method='POST' action='')
+    div
+      label.form-label
+        span.form-span-text Which type of plant is it?
+        span.form-span
+        select#plant-type.form-select(name='plant_type')
+          option(value="") * None Selected *
+          option(value="evergreen") Evergreen
+          option(value="shrub") Shrub
+          option(value="vine") Vine
+
+
+    div
+      label.form-label
+        span.form-span-text Which shape of plant is it?
+        span.form-span
+        select#plant-shape.form-select(name="plant_shape")
+          option(value="") * None Selected *
+          option(value="1") Spreading
+          option(value="2") Climbing
+          option(value="3") Arching
+        
+
+    
+    div
+      label.form-label
+        span.form-span-text Which color are the leaves?
+        span.form-span
+        select#leaf-color.form-select(name="leaf_color")
+          option(value="") * None Selected *
+          option(value="Yellow") Yellow
+          option(value="Medium Green") Medium Green
+          option(value="3") Crew Related
+        
+
+    div
+      label.form-label
+        span.form-span-text Which type of leaves does it have?
+        span.form-span
+        select#leaf-type.form-select(name="leaf_type")
+          option(value="") * None Selected *
+          option(value="1") Simulation
+          option(value="2") Rocket Test
+          option(value="3") Crew Related
+        
+
+    div
+      label.form-label
+        span.form-span-text Approximately how big are the leaves?
+        span.form-span
+        select#leaf-dimensions.form-select(name="leaf_dimensions")
+          option(value="") * None Selected *
+          option(value="1") Simulation
+          option(value="2") Rocket Test
+          option(value="3") Crew Related
+        
+
+    div
+      label.form-label
+        span.form-span-text Which color is the bark?
+        span.form-span
+        select#bark-color.form-select(name="bark_color")
+          option(value="") * None Selected *
+          option(value="lightBrown") Light Brown
+          option(value="lightGrey") Light Grey
+          option(value="tan") Tan
+        
+
+    div
+      label.form-label
+        span.form-span-text Which color is the stem?
+        span.form-span
+        select#stem-color.form-select(name="stem_color")
+          option(value="") * None Selected *
+          option(value="lightBrown") Light Brown
+          option(value="lightGrey") Light Grey
+          option(value="tan") Tan
+        
+
+    div
+      label.form-label
+        span.form-span-text Which color are its fruits?
+        span.form-span
+        select#fruit-color.form-select(name="fruit_color")
+          option(value="") * None Selected *
+          option(value="lightBrown") Light Brown
+          option(value="lightGrey") Light Grey
+          option(value="tan") Tan
+        
+
+    div
+      label.form-label
+        span.form-span-text Which color are its flowers?
+        span.form-span
+        select#flower-color.form-select(name="flower_color")
+          option(value="") * None Selected *
+          option(value="lightBrown") Light Brown
+          option(value="lightGrey") Light Grey
+          option(value="tan") Tan
+        
+
+    div
+      label.form-label
+        span.form-span-text Approximately how big are its flowers?
+        span.form-span
+        select#flower-dimensions.form-select(name="flower_dimensions")
+          option(value="") * None Selected *
+          option(value="lightBrown") Light Brown
+          option(value="lightGrey") Light Grey
+          option(value="tan") Tan
+        
+  
+    div 
+      span.form-span
+      button.form-button(type='submit') Show Me What You Got!
+
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg
+
+

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 #{title}: #{shrub.common_name[0]}
+  p= shrub.brief_description
+  hr
+  p Do you really want to delete this Author?
+
+  form(method='POST' action='')
+    div.form-group
+      input#shrubid.form-control(type='hidden',name='shrubid', required='true', value=shrub._id )
+
+    button.btn.btn-primary(type='submit') Delete

@@ -50,7 +50,7 @@ const ShrubSchema = new Schema(
 ShrubSchema
     .virtual('url')
     .get(function () {
-        return '/shrub/' + this._id;
+        return '/catalog/shrub/' + this._id;
     }
 );
 
