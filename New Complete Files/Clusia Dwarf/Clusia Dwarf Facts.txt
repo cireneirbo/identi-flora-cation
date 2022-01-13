@@ -1,0 +1,51 @@
+common_name: Clusia - dwarf
+
+latin_name:Clusia rosea
+
+brief_description: Dwarf clusia is a low-growing, spreading shrub with unusual foliage that can be used as an easy-care, drought-tolerant ground cover, border or accent plant.
+
+plant_type: shrub, annual
+
+plant_shape: round
+
+bloom_time: spring
+
+dimensions: 1-2 ft tall, 2-3 ft wide
+
+flower_bool: y
+
+flower_color: pale pink/white
+
+flower_dimensions: < 1 inch
+
+fruit_bool: n
+
+fruit_color:n
+
+leaf_color: green
+
+leaf_dimensions: 1-2 inch long, 1 inch wide
+
+leaves_type: oblong
+
+bark_color: tan
+
+stem_color: green
+
+sun_exposure: Full sun, partial sun
+
+soil: good drainage
+
+water_requirements: moderate
+
+USDA_hardiness_zone: 10a, 10b
+
+poisonous_bool: n
+
+edible_bool: n
+
+skin_irritant_bool: n
+
+Is it dangerous? n
+
+
