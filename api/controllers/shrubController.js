@@ -310,7 +310,6 @@ exports.about = function(req, res) {
 // Display Shrub search form on GET.
 exports.shrub_search_get = function(req, res, next) {
     
-
     Shrub.find()
         .sort([['common_name', 'ascending']])
         .exec(function (err, list_shrubs) {
@@ -318,26 +317,6 @@ exports.shrub_search_get = function(req, res, next) {
             //Successful, so render
             res.render('shrub_form', { title: 'Search', shrub_list: list_shrubs} );
         });
-
-
-    // Get shrubs for form.
-    // async.parallel({
-    //     shrub: function(callback) {
-    //         Shrub.findById(req.params.id).populate('common_name[0]').populate('brief_description').exec(callback);
-    //     },
-    //     /*books: function(callback) {
-    //         Book.find(callback);
-    //     },*/
-    // }, function(err, results) {
-    //     if (err) { return next(err); }
-    //     if (results.shrub==null) { // No results.
-    //         let err = new Error('Shrub not found');
-    //         err.status = 404;
-    //         return next(err);
-    //     }
-    //     // Success.
-    //     res.render('shrub_form', { title: 'Search', /*books: results.books,*/ shrub: results.shrub });
-    // });
 
 };
 
@@ -355,27 +334,14 @@ exports.shrub_search_post = [
     body('fruit_color').exists(),
     body('flower_color').exists(),
     body('flower_dimensions').exists(),
-    // body('family_name').trim().isLength({ min: 1 }).escape().withMessage('Family name must be specified.')
-    //     .isAlphanumeric().withMessage('Family name has non-alphanumeric characters.'),
-    // body('date_of_birth', 'Invalid date of birth').optional({ checkFalsy: true }).isISO8601().toDate(),
-    // body('date_of_death', 'Invalid date of death').optional({ checkFalsy: true }).isISO8601().toDate(),
-
+    
     // Process request after validation and sanitization.
     (req, res, next) => {
 
         // Extract the validation errors from a request.
         const errors = validationResult(req);
 
-        // // Create an Author object with escaped/trimmed data and old id.
-        // const author = new Author(
-        //     { 
-        //         first_name: req.body.first_name,
-        //         family_name: req.body.family_name,
-        //         date_of_birth: req.body.date_of_birth,
-        //         date_of_death: req.body.date_of_death,
-        //         _id:req.params.id //This is required, or a new ID will be assigned!
-        //     }
-        // );
+        
         // Create an Author object with escaped/trimmed data and old id.
         const shrub_search_list = { 
             plant_type: req.body.plant_type,
@@ -388,32 +354,48 @@ exports.shrub_search_post = [
             fruit_color: req.body.fruit_color,
             flower_color: req.body.flower_color,
             flower_dimensions: req.body.flower_dimensions,
-            // hello: "hello",
-            // bod: req.body,
-            // shrub_list: res.shrub_list
         }
         
 
         let searchedData = [];
 
-        // search for each search selection and add to searchedData if match. do one of these vvv for each, maybe in an async.parallel()
-        Shrub.find({ leaf_color: ["Yellow", "Medium Green"] })
+        // Search for each shrub_search_list with an `$or` expression
+        Shrub.find({ $or: [
+            { leaf_color: shrub_search_list.leaf_color }, 
+            { plant_type: shrub_search_list.plant_type },
+            { plant_shape: shrub_search_list.plant_shape },
+            { leaf_type: shrub_search_list.leaf_type },
+            { leaf_dimensions: shrub_search_list.leaf_dimensions },
+            { bark_color: shrub_search_list.bark_color },
+            { stem_color: shrub_search_list.stem_color },
+            { fruit_color: shrub_search_list.fruit_color },
+            { flower_color: shrub_search_list.flower_color },
+            { flower_dimensions: shrub_search_list.flower_dimensions },
+        ]})
         .sort([['common_name', 'ascending']])
         .exec(function (err, list_shrubs) {
             if (err) { return next(err); }
             //Successful, so render
-            /*for(let i = 0; i < list_shrubs.length; i++) {
+            //for(let i = 0; i < list_shrubs.length; i++) {
                 //for(let j = 0; j < shrub_search_list.length; j++) {
-                    if(list_shrubs[i].leaf_color[0].includes(shrub_search_list.leaf_color)) {
-                        //if (!searchedData.includes(list_shrubs[i])) {
-                            searchedData.push(list_shrubs[i]);
-                        //}
-                    }
+                    //if(list_shrubs[i].leaf_color[0].includes(shrub_search_list.leaf_color)) {
+                        if (!searchedData.includes(list_shrubs)) {
+                            searchedData.push(list_shrubs);
+                        }
+                    //}
                 //}
-            }*/
+            //}
             //res.render('shrub_form', { title: 'Search', shrub_search_list: shrub_search_list, searchedData: searchedData } );
             res.send({ shrub_search_list: shrub_search_list, /*shrub_list: list_shrubs,*/ searchedData: searchedData, shrub_leaf_color: shrub_search_list.leaf_color } );
         });
+
+
+
+
+
+
+
+
         // alert("POST!!!");
         // if (!errors.isEmpty()) {
         //     // There are errors. Render form again with sanitized values/error messages.
@@ -433,18 +415,3 @@ exports.shrub_search_post = [
         // }
     }
 ];
-/*
-exports.results = function(req, res, next) {
-    
-
-   // Shrub.find()
-       // .sort([['common_name', 'ascending']])
-        //.exec(function (err, list_shrubs) {
-        //    if (err) { return next(err); }
-            //Successful, so render
-            res.render('search_results', { title: 'Search Results'} );
-       // });
-
-
-    
-};*/

@@ -1,24 +1,26 @@
 extends layout
 
 block content
+  div#main
+    h2 #{shrub.common_name[0]}
+    li #{shrub.brief_description}
+    hr
 
-  h1 Plant: #{shrub.common_name[0]}
-  p #{shrub.brief_description}
+    div
+      ul      
+          li 
+            img(src=shrub.images[0])
+            a(href=shrub.url): h3 #{shrub.common_name[0]}
+            p #{shrub.latin_name}
+            p #{shrub.brief_description}
+        
+    hr
+    p
+      a(href=shrub.url+'/delete') Delete Shrub
 
-  div(style='margin-left:20px;margin-top:20px')
 
-    h4 Books
-
-    //- dl
-    //-   each book in author_books
-    //-     dt
-    //-       a(href=book.url) #{book.title}
-    //-     dd #{book.summary}
-
-    //-   else
-    //-     p This author has no books.
-
-  hr
-  p
-    a(href=shrub.url+'/delete') Delete Shrub
   
+        
+        
+      
+      
