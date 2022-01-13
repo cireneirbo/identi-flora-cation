@@ -12,13 +12,13 @@ const ShrubSchema = new Schema(
 
         plant_type: {type: Array, required: true, maxLength: 10},
         plant_shape: {type: Array, required: true, maxLength: 10},
-        bloom_time: {type: String, required: true, maxLength: 100},
+        bloom_time: {type: Array, required: true, maxLength: 100},
 
         dimensions: {type: Array, required: true, maxLength: 2},
         flower_bool: {type: Boolean, required: true, maxLength: 1},
         flower_color: {type: Array, required: true, maxLength: 10},
 
-        flower_dimensions: {type: String, required: true, maxLength: 100},
+        flower_dimensions: {type: Array, required: true, maxLength: 100},
         fruit_bool: {type: Boolean, required: true, maxLength: 1},
         fruit_color: {type: Array, required: true, maxLength: 10},
 
