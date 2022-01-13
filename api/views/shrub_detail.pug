@@ -10,13 +10,93 @@ block content
       ul      
           li 
             img(src=shrub.images[0])
-            a(href=shrub.url): h3 #{shrub.common_name[0]}
+            h3 #{shrub.common_name[0]}
             p #{shrub.latin_name}
             p #{shrub.brief_description}
+
+          
+          li Plant Type
+            each item in shrub.plant_type
+              p #{item}
+            
+            else
+              li 
+
+          li Plant Shape
+            each item in shrub.plant_shape
+              p #{item}
+            
+            else
+              li
+
+          li Bloom Time
+            each item in shrub.bloom_time
+              p #{item}
+            
+            else
+              li  
+
+          li Flower Colors
+            each item in shrub.flower_color
+              p #{item}
+            
+            else
+              li 
+
+          li Flower Size
+            each item in shrub.flower_dimensions
+              p #{item}
+            
+            else
+              li 
+
+          li Leaf Colors
+            each item in shrub.leaf_color
+              p #{item}
+            
+            else
+              li 
         
-    hr
-    p
-      a(href=shrub.url+'/delete') Delete Shrub
+          li Leaf Size
+            each item in shrub.leaf_dimensions
+              p #{item}
+            
+            else
+              li 
+
+          li Bark Colors
+            each item in shrub.bark_color
+              p #{item}
+            
+            else
+              li 
+
+          li Stem Colors
+            each item in shrub.stem_color
+              p #{item}
+            
+            else
+              li 
+
+          li Sun Requirements
+              p #{shrub.sun_exposure}
+          
+          li Soil Requirements
+              p #{shrub.soil}
+          
+          li Water Requirements
+              p #{shrub.water_requirements}
+
+          //- li USDA Hardiness Zones
+          //-   each item in shrub.hardiness_zones
+          //-     p #{item}
+            
+          //-   else
+          //-     li 
+          
+          li Is it dangerous?
+              p #{shrub.dangerous_description}
+
 
 
   

@@ -4,7 +4,6 @@ const async = require('async');
 
 // Import project files
 const Shrub = require('../models/shrub');
-//const e = require('express');
 
 // /catalog/home page
 exports.index = function(req, res) {
@@ -13,7 +12,7 @@ exports.index = function(req, res) {
     
 };
 
-// Display list of all Authors.
+// Display list of all Shrubs.
 exports.shrub_list = function(req, res, next) {
     
     Shrub.find()
@@ -42,7 +41,7 @@ exports.shrub_detail = function(req, res, next) {
             return next(err);
         }
         // Successful, so render.
-    res.render('shrub_detail', { title: 'Shrub Detail', shrub: results.shrub, /*author_books: results.authors_books*/ } );
+    res.render('shrub_detail', { title: 'Shrub Detail', shrub: results.shrub } );
     });
 
 };
@@ -60,7 +59,7 @@ exports.shrub_delete_get = function(req, res, next) {
             res.redirect('/catalog/shrubs');
         }
         // Successful, so render.
-        res.render('shrub_delete', { title: 'Delete Shrub', shrub: results.shrub, /*author_books: results.authors_books*/ } );
+        res.render('shrub_delete', { title: 'Delete Shrub', shrub: results.shrub } );
     });
 
 };
@@ -130,7 +129,7 @@ exports.shrub_search_post = [
         const errors = validationResult(req);
 
         
-        // Create an Author object with escaped/trimmed data and old id.
+        // Create a Shrub object with escaped/trimmed data and old id.
         const shrub_search_list = { 
             plant_type: req.body.plant_type,
             plant_shape: req.body.plant_shape,
@@ -168,8 +167,8 @@ exports.shrub_search_post = [
                     searchedData.push(list_shrubs);
                 }
                     
-            res.render('shrub_form', { title: 'Search', /*shrub_search_list: shrub_search_list,*/ searchedData: searchedData } );
-            //res.send({ shrub_search_list: shrub_search_list, /*shrub_list: list_shrubs,*/ searchedData: searchedData /*shrub_leaf_color: shrub_search_list.leaf_color*/ } );
+            res.render('search_results', { title: 'Search', /*shrub_search_list: shrub_search_list,*/ searchedData: searchedData } );
+            //res.send({ /*shrub_search_list: shrub_search_list, shrub_list: list_shrubs,*/ searchedData: searchedData /*shrub_leaf_color: shrub_search_list.leaf_color*/ } );
         });
 
     }

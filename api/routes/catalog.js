@@ -13,23 +13,23 @@ router.get('/', shrub_controller.index);
 * SHRUB ROUTES
 */
 
-// GET request for creating Author. NOTE This must come before route for id (i.e. display author).
+// GET request for creating Shrub. NOTE This must come before route for id (i.e. display shrub).
 // router.get('/shrub/create', shrub_controller.shrub_create_get);
 
-// POST request for creating Author.
-//router.post('/author/create', author_controller.author_create_post);
+// POST request for creating Shrub.
+//router.post('/shrub/create', shrub_controller.shrub_create_post);
 
-// GET request to delete Author.
+// GET request to delete shrub.
 router.get('/shrub/:id/delete', shrub_controller.shrub_delete_get);
 
-// POST request to delete Author.
+// POST request to delete shrub.
 router.post('/shrub/:id/delete', shrub_controller.shrub_delete_post);
 
-// GET request to update Author.
-//router.get('/author/:id/update', author_controller.author_update_get);
+// GET request to update shrub.
+//router.get('/shrub/:id/update', shrub_controller.shrub_update_get);
 
-// POST request to update Author.
-//router.post('/author/:id/update', author_controller.author_update_post);
+// POST request to update shrub.
+//router.post('/shrub/:id/update', shrub_controller.shrub_update_post);
 
 // GET request for one Shrub.
 router.get('/shrub/:id', shrub_controller.shrub_detail);

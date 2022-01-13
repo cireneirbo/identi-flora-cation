@@ -1,15 +1,20 @@
 extends layout
 
 block content
-  h1= title
-  p yup
+  div#main
+    h2 Search Results
+    li All of the plants that matched your query.
+    hr
   
-  each item in shrub_search_list 
-    li #{item}
-
-  p #{shrub_search_list.plant_type}
-
-  each item in searchedData
-    li #{item}
+  div
+      ul      
+        each shrub in searchedData[0]
+          li 
+            img(src=shrub.images[0])
+            a(href=shrub.url): h3 #{shrub.common_name[0]}
+            p #{shrub.latin_name}
+            p #{shrub.brief_description}
+        else
+          li Oh no! There are no matches!
   
 
