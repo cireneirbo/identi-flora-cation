@@ -396,6 +396,7 @@ exports.shrub_search_post = [
 
         let searchedData = [];
 
+        // search for each search selection and add to searchedData if match. do one of these vvv for each, maybe in an async.parallel()
         Shrub.find({ leaf_color: ["Yellow", "Medium Green"] })
         .sort([['common_name', 'ascending']])
         .exec(function (err, list_shrubs) {
@@ -411,7 +412,7 @@ exports.shrub_search_post = [
                 //}
             }*/
             //res.render('shrub_form', { title: 'Search', shrub_search_list: shrub_search_list, searchedData: searchedData } );
-            res.send({ shrub_search_list: shrub_search_list, shrub_list: list_shrubs, searchedData: searchedData } );
+            res.send({ shrub_search_list: shrub_search_list, /*shrub_list: list_shrubs,*/ searchedData: searchedData, shrub_leaf_color: shrub_search_list.leaf_color } );
         });
         // alert("POST!!!");
         // if (!errors.isEmpty()) {
