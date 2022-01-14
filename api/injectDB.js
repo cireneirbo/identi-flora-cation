@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-
+/*
 // run this script with the command : `node injectDB.js`
 console.log(`
     Initializing...    
@@ -156,12 +156,6 @@ function createShrubs(cb) {
         callback
       );
     },
-    /*function(callback) {
-      shrubCreate(
-        'Ben', 
-        callback
-      );
-    },*/
     ],
     // optional callback
     cb
@@ -182,4 +176,4 @@ function(err, results) {
   }
   // All done, disconnect from database
   mongoose.connection.close();
-});
+});*/
