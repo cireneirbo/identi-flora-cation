@@ -1,2 +1,2 @@
-web: ./api/bin/www
+web: ./bin/www
 start: node ./bin/www
