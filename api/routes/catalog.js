@@ -20,10 +20,10 @@ router.get('/', shrub_controller.index);
 //router.post('/shrub/create', shrub_controller.shrub_create_post);
 
 // GET request to delete shrub.
-router.get('/shrub/:id/delete', shrub_controller.shrub_delete_get);
+//router.get('/shrub/:id/delete', shrub_controller.shrub_delete_get);
 
 // POST request to delete shrub.
-router.post('/shrub/:id/delete', shrub_controller.shrub_delete_post);
+//router.post('/shrub/:id/delete', shrub_controller.shrub_delete_post);
 
 // GET request to update shrub.
 //router.get('/shrub/:id/update', shrub_controller.shrub_update_get);

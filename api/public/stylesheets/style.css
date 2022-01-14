@@ -46,21 +46,25 @@ div {
 
 ul {
   list-style-type: none;
-  /* width: 500px; */
+  width: 800px;
   text-align: left;
-  min-width: 500px;
-  max-width: 1200px;
+  /* min-width: 500px;
+  max-width: 1200px; */
 }
 
 h3 {
   font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
 }
 
+h4 {
+  font: bold 16px/1.5 Helvetica, Verdana, sans-serif;
+}
+
 li img {
   float: left;
   margin: 0 15px 0 0;
-  max-width: 25%;
-  min-width: 75px;
+  max-width: 50%;
+  min-width: 80px;
   box-shadow: 1px 1px;
 }
 
@@ -76,7 +80,7 @@ li {
 
 li:hover {
   background: rgb(230, 230, 230);
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 
@@ -107,3 +111,11 @@ li:hover {
 }
 
 /* About page */
+
+
+/*  Detail page */
+
+.detail {
+  /* display: inline-block;
+  width: 800px; */
+}

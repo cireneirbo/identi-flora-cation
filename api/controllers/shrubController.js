@@ -45,7 +45,7 @@ exports.shrub_detail = function(req, res, next) {
     });
 
 };
-
+/*
 // Display Shrub delete form on GET.
 exports.shrub_delete_get = function(req, res, next) {
 
@@ -84,7 +84,7 @@ exports.shrub_delete_post = function(req, res, next) {
     });
     
 };
-
+*/
 
 // /catalog/about page
 exports.about = function(req, res) {
