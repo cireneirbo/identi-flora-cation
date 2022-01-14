@@ -1,26 +1,95 @@
-# identi-flora-cation
-A web-app that allows users to find out which South Florida plant they are looking at.
+# Shrubs
+## SMALL SHRUBS
+Allamanda - dwarf.
+Arboricola - variegated.
+Azalea - dwarf & semi-dwarf.
+Bottlebrush Bush - dwarf.
+Bougainvillea - dwarf.
+Burfordii Holly.
+Carissa.
+Clusia - dwarf.
+Coontie.
+Croton.
+Crown of Thorns.
+Downy Jasmine.
+Drift Rose.
+Firebush - dwarf.
+Firecracker.
+Gold Mound.
+Green Island Ficus.
+Indian Hawthorne.
+Ixora - dwarf & Maui.
+Japanese Boxwood.
+Juniper.
+Loropetalum - Plum.
+Oleander - dwarf.
+Panama Rose.
+Philodendron - Xanadu.
+Pinwheel Jasmine.
+Plumbago.
+Podocarpus - dwarf.
+Porterweed - blue.
+Powderpuff - dwarf.
+Ruella.
+Schillings (Dwarf Yaupon) Holly.
+Snowbush.
+Thryallis.
+Tibouchina - dwarf.
 
-This project is for the [MongoDB Atlas hackathon](https://dev.to/devteam/announcing-the-mongodb-atlas-hackathon-on-dev-4b6m) from 12/13/21-1/13/22. Our chosen category is `Choose Your Own Adventure`
+## MEDIUM HEIGHT SHRUBS
+Allamanda - Bush.
+Angel's Trumpet.
+Arboricola - Green.
+Azalea.
+Beautyberry.
+Bird of Paradise - Orange.
+Bougainvillea (mid-size) (Raspberry Ice & Pixie).
+Buddleia ("Butterfly Bush").
+Cape Honeysuckle.
+Cape Jasmine.
+Chenille.
+Cocoplum.
+Copper Plant.
+Firebush (native).
+Firespike.
+Gardenia.
+Hibiscus.
+Ixora - Nora Grant & Super King.
+Knock Out Rose.
+Ligustrum.
+Loropetalum - Burgundy.
+Nandina.
+Night Blooming Jasmine.
+Philodendron - Hope.
+Pittisporum - variegated.
+Star Jasmine.
+Texas Sage.
+Thunbergia.
+Tibouchina (urvilleana & grandifolia).
+Viburnum.
+Yesterday Today & Tomorrow.
 
-## Getting Started
-* Clone or fork this repo
-* Install dependencies with `npm install`
-
-### Connect to the Database
-* [Mozilla Developer Network MongoDB Setup](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose#setting_up_the_mongodb_database) - A tutorial for setting up a MongoDB connection.
-
-### Start the web app
-* Navigate to the project's top directory in the terminal.
-* Open a second terminal instance in the same location.
-* Start the api in the first terminal using `cd api/ && npm start`
-* Start the client in the second terminal using `cd client/ && npm start`
-* Navigate to [http://localhost:3000/](http://localhost:3000/) if it does not automatically open for you.
-
-## Dependencies
-* [MongoDB](https://www.mongodb.com/) - a simple-to-use database service.
-* [Express.js](https://expressjs.com/) - a light-weight framework for Node.js.
-* [React.js](https://reactjs.org/) - a frontend framework for JavaScript.
-* [Async](https://www.npmjs.com/package/async) - Async is a utility module which provides straight-forward, powerful functions for working with asynchronous JavaScript.
-* [Axios](https://www.npmjs.com/package/axios) - Promise based HTTP client for the browser and node.js
-* [Mongoose](https://www.npmjs.com/package/mongoose) - Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
+## LARGE SHRUBS
+Bird of Paradise - White.
+Bottlebrush Bush - Red Cluster.
+Bougainvillea.
+Brazilian Red Cloak.
+Clerodendrum Quadriloculare.
+Clusia.
+Eugenia.
+False Aralia.
+Golden Dewdrop.
+Guava - Strawberry.
+Jatropha.
+Ming Aralia.
+Oleander.
+Philodendron - Selloum.
+Podocarpus.
+Powderpuff.
+Schefflera.
+Sea Grape.
+Silver Buttonwood.
+Simpson's Stopper.
+Wax Myrtle.
+Wild Coffee.
+Yellow Elder.
