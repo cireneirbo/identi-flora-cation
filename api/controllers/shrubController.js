@@ -14,35 +14,52 @@ exports.index = function(req, res) {
 
 // Display list of all Shrubs.
 exports.shrub_list = function(req, res, next) {
+    const list_shrubs = Shrub.shrubs;
     
-    Shrub.find()
+    /*Shrub.find()
         .sort([['common_name', 'ascending']])
         .exec(function (err, list_shrubs) {
-            if (err) { return next(err); }
+            if (err) { return next(err); }*/
             //Successful, so render
             res.render('shrub_list', { title: 'Shrub List', shrub_list: list_shrubs} );
-        });
+            //res.send({ title: 'Shrub List', shrub_list: list_shrubs} );
+        //});
   
 };
 
 // Display detail page for a specific Shrub.
 exports.shrub_detail = function(req, res, next) {
 
-    async.parallel({
+    const shrub = [];
+    for( let i = 0; i < Shrub.shrubs.length; i++) {
+
+        if(Shrub.shrubs[i].common_name.toLowerCase().includes(req.params.common_name)) {
+            shrub.push(Shrub.shrubs[i]);
+            console.log("High-five")
+        }
+        else {
+            console.log(Shrub.shrubs[i].common_name.toLowerCase());
+            console.log(req.params)
+        }
+    }
+    
+    //console.log(shrub);
+    /*async.parallel({
         shrub: function(callback) {
-            Shrub.findById(req.params.id)
+            const shrub = Shrub.shrubs.map(shrub => shrub.common_name.toLowerCase() == req.params.common_name)
+            console.log(shrub)
               .exec(callback)
-        },
-    }, function(err, results) {
+        },*/
+    /*}, function(err, results) {
         if (err) { return next(err); } // Error in API usage.
         if (results.shrub==null) { // No results.
             let err = new Error('Shrub not found');
             err.status = 404;
             return next(err);
-        }
+        }*/
         // Successful, so render.
-    res.render('shrub_detail', { title: 'Shrub Detail', shrub: results.shrub } );
-    });
+    res.render('shrub_detail', { title: 'Shrub Detail', shrub: shrub } );
+    //});
 
 };
 /*

@@ -11,11 +11,18 @@ block content
         each shrub in shrub_list
           li 
             img(src=shrub.images[0])
-            a(href=shrub.url): h3 #{shrub.common_name[0]}
+            a(href=shrub.url): h3 #{shrub.common_name}
             p #{shrub.latin_name}
             p #{shrub.brief_description}
         else
           li Oh no! There are no shrubs!
+      //- ul      
+      //-   li 
+      //-     img(src=shrub_list.images[0])
+      //-     a(href=shrub_list.url): h3 #{shrub_list.common_name}
+      //-     p #{shrub_list.latin_name}
+      //-     p #{shrub_list.brief_description}
+        
 
 
   

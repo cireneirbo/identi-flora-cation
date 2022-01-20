@@ -2,75 +2,75 @@ extends layout
 
 block content
   div#main
-    h2 #{shrub.common_name[0]}
-    li #{shrub.brief_description}
+    h2 #{shrub[0].common_name}
+    li #{shrub[0].brief_description}
     hr
 
     div
       ul.detail      
         li 
-          img(src=shrub.images[0])
-          h4 #{shrub.common_name[0]}
-          p #{shrub.latin_name}
-          p #{shrub.brief_description}
+          img(src=shrub[0].images[0])
+          h4 #{shrub[0].common_name}
+          p #{shrub[0].latin_name}
+          p #{shrub[0].brief_description}
           h4 Plant Type
-          each item in shrub.plant_type
+          each item in shrub[0].plant_type
             | #{item} 
           else
             li
           h4 Plant Shape
-          each item in shrub.plant_shape
+          each item in shrub[0].plant_shape
             | #{item} 
           else
             li
           h4 Bloom Time
-          each item in shrub.bloom_time
+          each item in shrub[0].bloom_time
             | #{item} 
           else
             li  
         li 
-          img(src=shrub.images[1])
+          img(src=shrub[0].images[1])
           h4 Leaf Colors
-          each item in shrub.leaf_color
+          each item in shrub[0].leaf_color
             | #{item} 
           else
             li 
           h4 Leaf Size
-          each item in shrub.leaf_dimensions
+          each item in shrub[0].leaf_dimensions
             | #{item} 
           else
             li 
           h4 Flower Colors
-          each item in shrub.flower_color
+          each item in shrub[0].flower_color
             | #{item} 
           else
             li 
           h4 Flower Size
-          each item in shrub.flower_dimensions
+          each item in shrub[0].flower_dimensions
             | #{item} 
           else
             li
         li 
-          img(src=shrub.images[2])
+          img(src=shrub[0].images[2])
           h4 Stem Colors
-          each item in shrub.stem_color
+          each item in shrub[0].stem_color
             | #{item} 
           else
             li 
           h4 Bark Colors
-          each item in shrub.bark_color
+          each item in shrub[0].bark_color
             | #{item} 
           else
             li 
           h4 Sun Requirements
-            p #{shrub.sun_exposure}
+            p #{shrub[0].sun_exposure}
           h4 Soil Requirements
-            p #{shrub.soil}
+            p #{shrub[0].soil}
           h4 Water Requirements
-            p #{shrub.water_requirements}      
+            p #{shrub[0].water_requirements}      
         li 
           h3 Is it dangerous?
-            p #{shrub.dangerous_description}
+            p #{shrub[0].dangerous_description}
 
 
       
