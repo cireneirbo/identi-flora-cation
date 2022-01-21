@@ -4,6 +4,7 @@ import axios from 'axios';
 
 
 function Detail() {
+  // grab the shrub's unique name from the url
   let params = useParams();
 
   const waitingMessage = "Awaiting API data...";

@@ -14,16 +14,12 @@ exports.index = function(req, res) {
 
 // Display list of all Shrubs.
 exports.shrub_list = function(req, res, next) {
+    
     const list_shrubs = Shrub.shrubs;
     
-    /*Shrub.find()
-        .sort([['common_name', 'ascending']])
-        .exec(function (err, list_shrubs) {
-            if (err) { return next(err); }*/
-            //Successful, so render
-            //res.render('shrub_list', { title: 'Shrub List', shrub_list: list_shrubs} );
-            res.send({ title: 'Shrub List', shrub_list: list_shrubs} );
-        //});
+    //res.render('shrub_list', { title: 'Shrub List', shrub_list: list_shrubs} );
+    res.send({ title: 'Shrub List', shrub_list: list_shrubs} );
+        
   
 };
 
@@ -43,24 +39,9 @@ exports.shrub_detail = function(req, res, next) {
         }
     }
     
-    //console.log(shrub);
-    /*async.parallel({
-        shrub: function(callback) {
-            const shrub = Shrub.shrubs.map(shrub => shrub.common_name.toLowerCase() == req.params.common_name)
-            console.log(shrub)
-              .exec(callback)
-        },*/
-    /*}, function(err, results) {
-        if (err) { return next(err); } // Error in API usage.
-        if (results.shrub==null) { // No results.
-            let err = new Error('Shrub not found');
-            err.status = 404;
-            return next(err);
-        }*/
-        // Successful, so render.
     //res.render('shrub_detail', { title: 'Shrub Detail', shrub: shrub } );
     res.send({ title: 'Shrub Detail', shrub: shrub } );
-    //});
+    
 
 };
 /*
@@ -116,14 +97,9 @@ exports.about = function(req, res) {
 exports.shrub_search_get = function(req, res, next) {
     
     const list_shrubs = Shrub.shrubs;
-    /*
-    Shrub.find()
-        .sort([['common_name', 'ascending']])
-        .exec(function (err, list_shrubs) {
-            if (err) { return next(err); }*/
-            //Successful, so render
-            res.render('shrub_form', { title: 'Search', shrub_list: list_shrubs} );
-        //});
+            
+    res.render('shrub_form', { title: 'Search', shrub_list: list_shrubs} );
+        
 
 };
 
