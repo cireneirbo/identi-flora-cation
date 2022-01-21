@@ -32,7 +32,7 @@ router.get('/', shrub_controller.index);
 //router.post('/shrub/:id/update', shrub_controller.shrub_update_post);
 
 // GET request for one Shrub.
-router.get('/shrub/:common_name', shrub_controller.shrub_detail);
+router.get('/shrub/:queryName', shrub_controller.shrub_detail);
 
 // GET request for list of all Shrubs.
 router.get('/shrubs', shrub_controller.shrub_list);

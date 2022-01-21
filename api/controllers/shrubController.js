@@ -33,7 +33,7 @@ exports.shrub_detail = function(req, res, next) {
     const shrub = [];
     for( let i = 0; i < Shrub.shrubs.length; i++) {
 
-        if(Shrub.shrubs[i].common_name.toLowerCase().includes(req.params.common_name)) {
+        if(Shrub.shrubs[i].queryName.includes(req.params.queryName)) {
             shrub.push(Shrub.shrubs[i]);
             console.log("High-five")
         }
@@ -58,7 +58,8 @@ exports.shrub_detail = function(req, res, next) {
             return next(err);
         }*/
         // Successful, so render.
-    res.render('shrub_detail', { title: 'Shrub Detail', shrub: shrub } );
+    //res.render('shrub_detail', { title: 'Shrub Detail', shrub: shrub } );
+    res.send({ title: 'Shrub Detail', shrub: shrub } );
     //});
 
 };

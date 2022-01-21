@@ -11,7 +11,7 @@ block content
         each shrub in shrub_list
           li 
             img(src=shrub.images[0])
-            a(href=shrub.url): h3 #{shrub.common_name}
+            a(href=shrub.urlBackend): h3 #{shrub.common_name}
             p #{shrub.latin_name}
             p #{shrub.brief_description}
         else

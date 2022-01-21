@@ -60,7 +60,7 @@ function List() {
     
               <li key={shrub.common_name}>
                 <img src={baseURL + shrub.images[0]} />
-                <h3>{shrub.common_name}</h3>
+                <a href={shrub.urlFrontend}><h3>{shrub.common_name}</h3></a>
                 <p><b>{shrub.latin_name}</b></p>
                 <p>{shrub.brief_description}</p>
               </li>

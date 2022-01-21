@@ -18,9 +18,10 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />} >
           <Route exact path="/" element={<Home />} />
-          <Route path="list" element={<List />} >
-            <Route path=":detailId" element={<Detail />} />
+          <Route exact path="list" element={<List />} >
+            {/* <Route path=":detailName" element={<Detail />} /> */}
           </Route>
+          <Route path="list/:detailName" element={<Detail />} />
           <Route path="search" element={<Search />} />
           <Route path="about" element={<About />} />
           <Route

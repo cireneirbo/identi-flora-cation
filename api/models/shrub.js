@@ -1,72 +1,4 @@
-//const arboricola_drawing = require('../public/images/arboricola_drawing.jpg');
-
-/*
-const mongoose = require('mongoose');
-
-const Schema = mongoose.Schema;
-
-const ShrubSchema = new Schema(
-
-    {
-        
-        common_name: {type: Array, required: true, maxLength: 100},
-        latin_name: {type: String, required: true, maxLength: 100},
-        brief_description: {type: String, required: true, maxLength: 1000},
-
-        plant_type: {type: Array, required: true, maxLength: 10},
-        plant_shape: {type: Array, required: true, maxLength: 10},
-        bloom_time: {type: Array, required: true, maxLength: 100},
-
-        dimensions: {type: Array, required: true, maxLength: 2},
-        flower_bool: {type: Boolean, required: true, maxLength: 1},
-        flower_color: {type: Array, required: true, maxLength: 10},
-
-        flower_dimensions: {type: Array, required: true, maxLength: 100},
-        fruit_bool: {type: Boolean, required: true, maxLength: 1},
-        fruit_color: {type: Array, required: true, maxLength: 10},
-
-        leaf_color: {type: Array, required: true, maxLength: 10},
-        leaf_dimensions: {type: Array, required: true, maxLength: 10},
-        leaf_type: {type: Array, required: true, maxLength: 10},
-
-        bark_color: {type: Array, required: true, maxLength: 10},
-        stem_color: {type: Array, required: true, maxLength: 10},
-        sun_exposure: {type: String, required: true, maxLength: 100},
-
-        soil: {type: String, required: true, maxLength: 100},
-        water_requirements: {type: String, required: true, maxLength: 100},
-        hardiness_zone: {type: Array, required: true, maxLength: 20},
-
-        poisonous_bool: {type: Boolean, required: true, maxLength: 1},
-        edible_bool: {type: Boolean, required: true, maxLength: 1},
-        skin_irritant_bool: {type: Boolean, required: true, maxLength: 1},
-
-        isDangerous: {type: Boolean, required: true, maxLength: 1},
-        dangerous_description: {type: String, required: true, maxLength: 1000},
-        images: {type: Array, required: true, maxLength: 1000},
-
-    }
-
-);
-
-// Virtual for shrub's URL
-ShrubSchema
-    .virtual('url')
-    .get(function () {
-        return '/catalog/shrub/' + this._id;
-    }
-);
-
-//Export model
-module.exports = mongoose.model('Shrub', ShrubSchema);
-
-*/
-/*
-new model
-*/
-
 // create an object of each shrub
-
 const arboricola = {
     common_name: "Arboricola",
     latin_name: "Schefflera arboricola",
@@ -74,14 +6,14 @@ const arboricola = {
     plant_type: ["Evergreen", "Shrub"],
     plant_shape: ["Hedge", "Round"],
     bloom_time: [""],
-    dimensions: [ {tall: "3-8 ft"}, {wide: "3-8 ft"} ],
+    dimensions: [ {tall: ["3 ft", "4 ft", "5 ft", "6 ft", "7 ft", "8 ft"] }, {wide: ["3 ft", "4 ft", "5 ft", "6 ft", "7 ft", "8 ft"] } ],
     flower_bool: false,
     flower_color: [""],
-    flower_dimensions: [""],
+    flower_dimensions: [{tall: [""]}, {wide: [""]}],
     fruit_bool: false,
-    fruit_color: [],
+    fruit_color: [""],
     leaf_color: ["Yellow", "Medium Green"],
-    leaf_dimensions: [ {long: "3-5 in"}, {wide: "1-3 in"}],
+    leaf_dimensions: [ {long: ["3 in", "4 in", "5 in"] }, {wide: ["1 in","2 in", "3 in"] }],
     bark_color: ["Yellow", "Medium Green"],
     stem_color: ["Yellow", "Medium Green"],
     sun_exposure: "sun or shade",
@@ -94,10 +26,76 @@ const arboricola = {
     isDangerous: true,
     dangerous_description: "Schefflera poisoning is due to the species containing 'sharp' calcium oxalate crystals that are insoluble and damage the cells and tissues of the animals ingesting them. For their own safety, children and household pets should be kept away from consuming this plant. In animals, the resulting damage (swelling) of exposed tissues and digestive tract may be fatal to the animal. Signs of poisoning in pets can include: oral irritation, intense burning and irritation of the mouth, lips, tongue, excessive drooling, vomiting, difficulty in swallowing",
     images: ["/images/arboricola_drawing.jpg", "/images/arboricola_1.jpg", "/images/arboricola_2.jpg"],
-    url: '/catalog/shrub/arboricola',
+    urlFrontend: '/list/arboricola',
+    urlBackend: '/catalog/shrub/arboricola',
+    queryName: 'arboricola',
+}
+
+const bottlebrushBush = {
+    common_name: "Dwarf Bottlebrush",
+    latin_name: "Callistemon citrinus",
+    brief_description: "Blood red, bottlebrush-like flower spikes cover this dwarf evergreen shrub from spring into summer. In warm, temperate regions, it will continue to bloom intermittently throughout the year. A densely branched habit with blue-green leaves that have a citrus scent when crushed. The versatile compact size is perfect for today's smaller gardens.",
+    plant_type: ["Evergreen"],
+    plant_shape: ["Round"],
+    bloom_time: ["Spring", "Summer"],
+    dimensions: [ {tall: "3 ft"}, {wide: "5 ft"} ],
+    flower_bool: true,
+    flower_color: ["Red"],
+    flower_dimensions: [ {tall: ["2 in", "3 in", "4 in", "5 in"]}, {wide: ["2 in", "3 in"]} ],
+    fruit_bool: false,
+    fruit_color: [""],
+    leaf_color: ["Blue Green"],
+    leaf_dimensions: [ {long: ["2 in", "3 in", "4 in"]}, {wide: ["1 in"]} ],
+    bark_color: ["Tan", "Light Brown"],
+    stem_color: ["Green"],
+    sun_exposure: "full-sun",
+    soil: "average moisture to dry",
+    water_requirements: "low",
+    hardiness_zone: ["8a", "8b", "9a", "9b", "10a", "10b", "11a", "11b"],
+    poisonous_bool: false,
+    edible_bool: false,
+    skin_irritant_bool: false,
+    isDangerous: true,
+    dangerous_description: "No although it is commonly confused with the Buckeye bottlebrush (Aesculus parviflora), which is toxic to pets and grows in USDA zones 4 through 8",
+    images: ["/images/bottlebrush_drawing.jpg", "/images/bottlebrush_1.jpg", "/images/bottlebrush_2.jpg"],
+    urlFrontend: '/list/bottlebrush-bush',
+    urlBackend: '/catalog/shrub/bottlebrush-bush',
+    queryName: 'bottlebrush-bush',
+}
+
+const bougainvillea = {
+    common_name: "Bougainvillea",
+    latin_name: "Bougainvillea spectabilis",
+    brief_description: "Bougainvillea is a genus of 18 flowering plants, native to South America, and in the Nyctaginaceae family. They are woody vines with a scrambling habit.",
+    plant_type: ["Shrub", "Vine"],
+    plant_shape: ["Arching", "Climbing", "Spreading"],
+    bloom_time: ["Spring", "Summer"],
+    dimensions: [ {tall: ["2 ft", "3 ft"]}, {wide: ["1 ft", "2 ft"]} ],
+    flower_bool: true,
+    flower_color: ["Pink", "White", "Purple", "Red", "Orange", "Yellow"],
+    flower_dimensions: [ {tall: ["Less than 1 in"]}, {wide: ["Less than 1 in"]} ],
+    fruit_bool: true,
+    fruit_color: ["Achene"],
+    leaf_color: ["Light Green"],
+    leaf_dimensions: [ {long: "Less than 1 in"}, {wide: ["Less than 1 in"]} ],
+    bark_color: ["Light Brown"],
+    stem_color: ["Green"],
+    sun_exposure: "full sun",
+    soil: "Loam (Silt), Sand, Good drainage",
+    water_requirements: "Low",
+    hardiness_zone: ["9b", "10b", "10a"],
+    poisonous_bool: false,
+    edible_bool: false,
+    skin_irritant_bool: false,
+    isDangerous: true,
+    dangerous_description: "Thorns",
+    images: ["/images/bougainvillea_drawing.jpg", "/images/bougainvillea_1.jpg", "/images/bougainvillea_2.jpg"],
+    urlFrontend: '/list/bougainvillea',
+    urlBackend: '/catalog/shrub/bougainvillea',
+    queryName: 'bougainvillea',
 }
 /*
-const plant = {
+const burfordiiHolly = {
     common_name: "Arboricola",
     latin_name: "Schefflera arboricola",
     brief_description: "",
@@ -124,9 +122,281 @@ const plant = {
     isDangerous: ,
     dangerous_description: "",
     images: ["", "", ""],
+    urlFrontend: '/list/arboricola',
+    urlBackend: '/catalog/shrub/arboricola',
+    queryName: 'arboricola',
 }
+
+const carissaHolly = {
+    common_name: "Arboricola",
+    latin_name: "Schefflera arboricola",
+    brief_description: "",
+    plant_type: [],
+    plant_shape: [],
+    bloom_time: [],
+    dimensions: [],
+    flower_bool: ,
+    flower_color: [],
+    flower_dimensions: [],
+    fruit_bool: ,
+    fruit_color: [],
+    leaf_color: [],
+    leaf_dimensions: [],
+    bark_color: [],
+    stem_color: [],
+    sun_exposure: "",
+    soil: "",
+    water_requirements: "",
+    hardiness_zone: [],
+    poisonous_bool: ,
+    edible_bool: ,
+    skin_irritant_bool: ,
+    isDangerous: ,
+    dangerous_description: "",
+    images: ["", "", ""],
+    urlFrontend: '/list/arboricola',
+    urlBackend: '/catalog/shrub/arboricola',
+    queryName: 'arboricola',
+}
+
+const clusiaDwarf = {
+    common_name: "Arboricola",
+    latin_name: "Schefflera arboricola",
+    brief_description: "",
+    plant_type: [],
+    plant_shape: [],
+    bloom_time: [],
+    dimensions: [],
+    flower_bool: ,
+    flower_color: [],
+    flower_dimensions: [],
+    fruit_bool: ,
+    fruit_color: [],
+    leaf_color: [],
+    leaf_dimensions: [],
+    bark_color: [],
+    stem_color: [],
+    sun_exposure: "",
+    soil: "",
+    water_requirements: "",
+    hardiness_zone: [],
+    poisonous_bool: ,
+    edible_bool: ,
+    skin_irritant_bool: ,
+    isDangerous: ,
+    dangerous_description: "",
+    images: ["", "", ""],
+    urlFrontend: '/list/arboricola',
+    urlBackend: '/catalog/shrub/arboricola',
+    queryName: 'arboricola',
+}
+
+const coontie = {
+    common_name: "Arboricola",
+    latin_name: "Schefflera arboricola",
+    brief_description: "",
+    plant_type: [],
+    plant_shape: [],
+    bloom_time: [],
+    dimensions: [],
+    flower_bool: ,
+    flower_color: [],
+    flower_dimensions: [],
+    fruit_bool: ,
+    fruit_color: [],
+    leaf_color: [],
+    leaf_dimensions: [],
+    bark_color: [],
+    stem_color: [],
+    sun_exposure: "",
+    soil: "",
+    water_requirements: "",
+    hardiness_zone: [],
+    poisonous_bool: ,
+    edible_bool: ,
+    skin_irritant_bool: ,
+    isDangerous: ,
+    dangerous_description: "",
+    images: ["", "", ""],
+    urlFrontend: '/list/arboricola',
+    urlBackend: '/catalog/shrub/arboricola',
+    queryName: 'arboricola',
+}
+
+const croton = {
+    common_name: "Arboricola",
+    latin_name: "Schefflera arboricola",
+    brief_description: "",
+    plant_type: [],
+    plant_shape: [],
+    bloom_time: [],
+    dimensions: [],
+    flower_bool: ,
+    flower_color: [],
+    flower_dimensions: [],
+    fruit_bool: ,
+    fruit_color: [],
+    leaf_color: [],
+    leaf_dimensions: [],
+    bark_color: [],
+    stem_color: [],
+    sun_exposure: "",
+    soil: "",
+    water_requirements: "",
+    hardiness_zone: [],
+    poisonous_bool: ,
+    edible_bool: ,
+    skin_irritant_bool: ,
+    isDangerous: ,
+    dangerous_description: "",
+    images: ["", "", ""],
+    urlFrontend: '/list/arboricola',
+    urlBackend: '/catalog/shrub/arboricola',
+    queryName: 'arboricola',
+}
+
+const crownOfThorns = {
+    common_name: "Arboricola",
+    latin_name: "Schefflera arboricola",
+    brief_description: "",
+    plant_type: [],
+    plant_shape: [],
+    bloom_time: [],
+    dimensions: [],
+    flower_bool: ,
+    flower_color: [],
+    flower_dimensions: [],
+    fruit_bool: ,
+    fruit_color: [],
+    leaf_color: [],
+    leaf_dimensions: [],
+    bark_color: [],
+    stem_color: [],
+    sun_exposure: "",
+    soil: "",
+    water_requirements: "",
+    hardiness_zone: [],
+    poisonous_bool: ,
+    edible_bool: ,
+    skin_irritant_bool: ,
+    isDangerous: ,
+    dangerous_description: "",
+    images: ["", "", ""],
+    urlFrontend: '/list/arboricola',
+    urlBackend: '/catalog/shrub/arboricola',
+    queryName: 'arboricola',
+}
+
+const driftRose = {
+    common_name: "Arboricola",
+    latin_name: "Schefflera arboricola",
+    brief_description: "",
+    plant_type: [],
+    plant_shape: [],
+    bloom_time: [],
+    dimensions: [],
+    flower_bool: ,
+    flower_color: [],
+    flower_dimensions: [],
+    fruit_bool: ,
+    fruit_color: [],
+    leaf_color: [],
+    leaf_dimensions: [],
+    bark_color: [],
+    stem_color: [],
+    sun_exposure: "",
+    soil: "",
+    water_requirements: "",
+    hardiness_zone: [],
+    poisonous_bool: ,
+    edible_bool: ,
+    skin_irritant_bool: ,
+    isDangerous: ,
+    dangerous_description: "",
+    images: ["", "", ""],
+    urlFrontend: '/list/arboricola',
+    urlBackend: '/catalog/shrub/arboricola',
+    queryName: 'arboricola',
+}
+
+const dwarfAllamanda = {
+    common_name: "Arboricola",
+    latin_name: "Schefflera arboricola",
+    brief_description: "",
+    plant_type: [],
+    plant_shape: [],
+    bloom_time: [],
+    dimensions: [],
+    flower_bool: ,
+    flower_color: [],
+    flower_dimensions: [],
+    fruit_bool: ,
+    fruit_color: [],
+    leaf_color: [],
+    leaf_dimensions: [],
+    bark_color: [],
+    stem_color: [],
+    sun_exposure: "",
+    soil: "",
+    water_requirements: "",
+    hardiness_zone: [],
+    poisonous_bool: ,
+    edible_bool: ,
+    skin_irritant_bool: ,
+    isDangerous: ,
+    dangerous_description: "",
+    images: ["", "", ""],
+    urlFrontend: '/list/arboricola',
+    urlBackend: '/catalog/shrub/arboricola',
+    queryName: 'arboricola',
+}
+
+const jasminum = {
+    common_name: "Arboricola",
+    latin_name: "Schefflera arboricola",
+    brief_description: "",
+    plant_type: [],
+    plant_shape: [],
+    bloom_time: [],
+    dimensions: [],
+    flower_bool: ,
+    flower_color: [],
+    flower_dimensions: [],
+    fruit_bool: ,
+    fruit_color: [],
+    leaf_color: [],
+    leaf_dimensions: [],
+    bark_color: [],
+    stem_color: [],
+    sun_exposure: "",
+    soil: "",
+    water_requirements: "",
+    hardiness_zone: [],
+    poisonous_bool: ,
+    edible_bool: ,
+    skin_irritant_bool: ,
+    isDangerous: ,
+    dangerous_description: "",
+    images: ["", "", ""],
+    urlFrontend: '/list/arboricola',
+    urlBackend: '/catalog/shrub/arboricola',
+    queryName: 'arboricola',
+}
+
 */
 
-
 // export all shrubs
-exports.shrubs = [arboricola];
+exports.shrubs = [
+    arboricola, 
+    bottlebrushBush, 
+    bougainvillea, 
+    /*burfordiiHolly, 
+    carissaHolly, 
+    clusiaDwarf, 
+    coontie, 
+    croton, 
+    crownOfThorns, 
+    driftRose, 
+    dwarfAllamanda, 
+    jasminum*/
+];
