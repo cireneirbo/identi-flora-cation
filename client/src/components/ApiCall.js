@@ -10,7 +10,7 @@ function ApiCall(props) {
   const [data, setData] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:9000/")
+    axios.get("http://localhost:9000/catalog/shrubs")
     .then(res => {
       setData(res.data);
     }).catch(err => {

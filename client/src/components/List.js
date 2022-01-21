@@ -5,7 +5,8 @@ import axios from 'axios';
 
 function List() {
   const waitingMessage = "Awaiting API data...";
-  const urlApi = "http://127.0.0.1:9000/";
+  const urlApi = "http://127.0.0.1:9000/catalog/shrubs";
+  const baseURL = "http://localhost:9000";
 
   const [isProcessed, setIsProcessed] = useState(false);
 
@@ -57,9 +58,9 @@ function List() {
 
             
     
-              <li key={shrub._id}>
-                <img src={shrub.images[0]} />
-                <h3>{shrub.common_name[0]}</h3>
+              <li key={shrub.common_name}>
+                <img src={baseURL + shrub.images[0]} />
+                <h3>{shrub.common_name}</h3>
                 <p><b>{shrub.latin_name}</b></p>
                 <p>{shrub.brief_description}</p>
               </li>

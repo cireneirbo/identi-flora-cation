@@ -21,8 +21,8 @@ exports.shrub_list = function(req, res, next) {
         .exec(function (err, list_shrubs) {
             if (err) { return next(err); }*/
             //Successful, so render
-            res.render('shrub_list', { title: 'Shrub List', shrub_list: list_shrubs} );
-            //res.send({ title: 'Shrub List', shrub_list: list_shrubs} );
+            //res.render('shrub_list', { title: 'Shrub List', shrub_list: list_shrubs} );
+            res.send({ title: 'Shrub List', shrub_list: list_shrubs} );
         //});
   
 };
@@ -114,13 +114,15 @@ exports.about = function(req, res) {
 // Display Shrub search form on GET.
 exports.shrub_search_get = function(req, res, next) {
     
+    const list_shrubs = Shrub.shrubs;
+    /*
     Shrub.find()
         .sort([['common_name', 'ascending']])
         .exec(function (err, list_shrubs) {
-            if (err) { return next(err); }
+            if (err) { return next(err); }*/
             //Successful, so render
             res.render('shrub_form', { title: 'Search', shrub_list: list_shrubs} );
-        });
+        //});
 
 };
 

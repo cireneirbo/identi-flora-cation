@@ -67,7 +67,7 @@ new model
 
 // create an object of each shrub
 
-const arbicola = {
+const arboricola = {
     common_name: "Arboricola",
     latin_name: "Schefflera arboricola",
     brief_description: "Scheffleras are large and graceful tropical plants often used in interior decorating. They are superb long-lived houseplants.",
@@ -129,4 +129,4 @@ const plant = {
 
 
 // export all shrubs
-exports.shrubs = [arbicola];
+exports.shrubs = [arboricola];
