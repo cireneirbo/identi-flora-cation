@@ -1,0 +1,101 @@
+.App {
+  /* text-align: center; */
+  color: rgb(94, 94, 94);
+  
+}
+
+body {
+  background-color: #f4f1e6;
+}
+
+.nav-bar {
+  margin: 20px;
+}
+
+/* .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+
+ .App-link {
+  color: #61c2dd;
+}
+
+
+/* List All Shrubs */
+div {
+  margin: 20px;
+}
+
+ul {
+  list-style-type: none;
+  /* width: 500px; */
+  text-align: left;
+  min-width: 500px;
+  max-width: 1200px;
+}
+
+h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+li img {
+  float: left;
+  margin: 0 15px 0 0;
+  max-width: 250px;
+  min-width: 75px;
+  box-shadow: 1px 1px;
+  /* width: 250px; */
+
+}
+
+li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+  width: 850px;
+}
+
+li {
+  padding: 10px;
+  display: inline-block;
+  overflow: auto;
+}
+
+li:hover {
+  background: rgb(230, 230, 230);
+  cursor: pointer;
+}
+
+
+/* Search  Form*/
+.form-span {
+  padding: 15px 30px;
+  margin: 0px 0px 0px 0px;
+}
+
+.form-select {
+  padding: 0px 30px;
+  margin: 0px 0px 0px 0px;
+  text-align: left;
+}
+
+.form-button {
+  text-align: center;
+}
+
+.form-label {
+  width: 600px;
+  display: inline-block;
+}
+
+.form-span-text {
+  width: 250px;
+  display: inline-block;
+}
+
+/* About page */
