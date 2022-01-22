@@ -24,10 +24,8 @@ function List() {
     }
   }, []);
 
-
-  console.log(data);
+  // console.log(data);
   
-
   // Displays a waiting message if API hasn't returned yet
   if (data === "" || isProcessed === false) {
     return (
@@ -54,41 +52,21 @@ function List() {
           <ul>
             {data.shrub_list.map(shrub => (
               
-            // <li >{shrub.common_name[0]}</li>
-
-            
-    
               <li key={shrub.common_name}>
                 <img src={baseURL + shrub.images[0]} />
                 <a href={shrub.urlFrontend}><h3>{shrub.common_name}</h3></a>
                 <p><b>{shrub.latin_name}</b></p>
                 <p>{shrub.brief_description}</p>
               </li>
-    
-  
 
-            
             ))}
           </ul>
         </div>
           
-
-
-          {/* <p>{data.shrub_list[0].bloom_time}</p>
-          <p>{data.shrub_list[0]._id}</p> */}
-          {/* <img src={data.shrub_list[0].images[0]} /> */}
-
-        {/* <Outlet /> */}
-
-        
       </div>
               
     );
   }
 }
-
-    
-
-
 
 export default List;

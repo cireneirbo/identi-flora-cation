@@ -5,7 +5,8 @@ import axios from 'axios';
 function Search() {
 
   const waitingMessage = "Sorry! Still waiting for the API data... \nTry the search button again in a moment or two.";
-  const urlApi = "http://127.0.0.1:9000/";
+
+  const urlApi = "http://127.0.0.1:9000/catalog/search";
 
   const [isProcessed, setIsProcessed] = useState(false);
 

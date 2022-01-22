@@ -98,7 +98,8 @@ exports.shrub_search_get = function(req, res, next) {
     
     const list_shrubs = Shrub.shrubs;
             
-    res.render('shrub_form', { title: 'Search', shrub_list: list_shrubs} );
+    //res.render('shrub_form', { title: 'Search', shrub_list: list_shrubs} );
+    res.send( { title: 'Search', shrub_list: list_shrubs} );
         
 
 };

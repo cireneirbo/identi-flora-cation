@@ -48,13 +48,16 @@ h3 {
 li img {
   float: left;
   margin: 0 15px 0 0;
-  max-width: 25%;
+  max-width: 250px;
   min-width: 75px;
   box-shadow: 1px 1px;
+  /* width: 250px; */
+
 }
 
 li p {
   font: 200 12px/1.5 Georgia, Times New Roman, serif;
+  width: 850px;
 }
 
 li {
