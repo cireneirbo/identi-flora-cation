@@ -1,0 +1,74 @@
+common_name: Croton, Fire Croton, Joseph's Coat,
+
+latin_name: Codiaeum variegatum var. pictum
+
+brief_description: Croton is an erect tropical evergreen shrub reaching heights of 8' but more commonly 3'.   It is a popular house shrub plant grown for its variously colored foliage or used as an exterior foundation plant, hedge, specimen plant where it is protected from frost.
+
+plant_type: Annual, Houseplant, Shrub, Poisonous
+
+plant_shape: Erect, Oval
+
+bloom_time: fall
+
+dimensions: 3-8 ft tall, 1-4 ft wide
+
+flower_bool: y
+
+flower_color: white
+
+flower_dimensions: < 1 inch
+
+fruit_bool: y
+
+fruit_color: Dark-colored
+
+leaf_color:     Gold/Yellow
+    Green
+    Orange
+    Pink
+    Purple/Lavender
+    Red/Burgundy
+    Variegated
+
+leaf_dimensions: 3-6 inches long, 1-3 inches wide
+
+leaves_type: Linear, Ovate
+
+bark_color: dark brown
+
+stem_color: Brown/Copper, Cream/Tan, Green
+
+sun_exposure: Full Sun
+
+soil: Good Drainage
+
+water_requirements: average
+
+USDA_hardiness_zone: 11b, 11a, 12a, 12b
+
+poisonous_bool: y
+
+edible_bool: n
+
+skin_irritant_bool: y
+
+Is it dangerous? 
+Poison Severity:
+    Low
+Poison Symptoms:
+    TOXIC ONLY IF LARGE QUANTITIES EATEN. SKIN IRRITATION MINOR OR LASTING ONLY FOR A FEW MINUTES. Allergic dermatitis with skin rash developing after repeated contact. Nausea, vomiting, diarrhea when ingested.
+Poison Toxic Principle:
+    Diterpene esters
+Causes Contact Dermatitis:
+    Yes
+Poison Part:
+    Bark
+    Flowers
+    Fruits
+    Leaves
+    Roots
+    Sap/Juice
+    Seeds
+    Stems
+
+

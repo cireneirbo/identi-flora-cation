@@ -1,0 +1,51 @@
+common_name: Arboricola, Dwarf Umbrella tree
+
+latin_name: Schefflera arboricola
+
+brief_description: Scheffleras are large and graceful tropical plants often used in interior decorating. They are superb long-lived houseplants.
+
+plant_type: evergreen shrub
+
+plant_shape: Hedge, Round,
+
+bloom_time: n
+
+dimensions: 3-8FT tall, 3-8FT wide
+
+flower_bool: N
+
+flower_color: N
+
+flower_dimensions: N
+
+fruit_bool: N
+
+fruit_color: N
+
+leaf_color: Yellow, Medium Green
+
+leaf_dimensions: 3-5 inches long, 1-3 inches wide
+
+leaves_type: oval
+
+bark_color: Yellow, Medium Green
+
+stem_color: Yellow, Medium Green
+
+sun_exposure: Sun or Shade
+
+soil: well-drained
+
+water_requirements: average
+
+USDA_hardiness_zone: 9b, 10a, 10b, 11a, 11b
+
+poisonous_bool: y
+
+edible_bool: N
+
+skin_irritant_bool: N
+
+Is it dangerous? Schefflera poisoning is due to the species containing "sharp" calcium oxalate crystals that are insoluble and damage the cells and tissues of the animals ingesting them. For their own safety, children and household pets should be kept away from consuming this plant. In animals, the resulting damage (swelling) of exposed tissues and digestive tract may be fatal to the animal. Signs of poisoning in pets can include: oral irritation, intense burning and irritation of the mouth, lips, tongue, excessive drooling, vomiting, difficulty in swallowing
+
+

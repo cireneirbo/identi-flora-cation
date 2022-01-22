@@ -1,0 +1,51 @@
+common_name: Dwarf Bottlebrush, Little John
+
+latin_name: Callistemon citrinus
+
+brief_description: Blood red, bottlebrush-like flower spikes cover this dwarf evergreen shrub from spring into summer. In warm, temperate regions, it will continue to bloom intermittently throughout the year. A densely branched habit with blue-green leaves that have a citrus scent when crushed. The versatile compact size is perfect for today's smaller gardens.
+
+plant_type: Evergreen
+
+plant_shape: round
+
+bloom_time: Spring to summer
+
+dimensions: 3 ft. tall, 5 ft. wide
+
+flower_bool: y
+
+flower_color: Red
+
+flower_dimensions: 2-5 inches long, 2-3 inches wide
+
+fruit_bool: n
+
+fruit_color: n
+ 
+leaf_color: Blue-green
+
+leaf_dimensions: 2-4inches long, 1 inch wide
+
+leaves_type: elongated, elliptic, clustered
+
+bark_color: tan, light brown
+
+stem_color:green
+
+sun_exposure: full-sun
+
+soil: average moisture to dry
+
+water_requirements: low
+
+USDA_hardiness_zone: 8a, 8b, 9a, 9b, 10a, 10b, 11a, 11b
+
+poisonous_bool: n
+
+edible_bool: n
+
+skin_irritant_bool: n
+
+Is it dangerous? No although it is commonly confused with the Buckeye bottlebrush (Aesculus parviflora), which is toxic to pets and grows in USDA zones 4 through 8
+
+

@@ -1,0 +1,53 @@
+common_name: Jasmine
+
+latin_name: Jasminum 
+
+brief_description: Jasminium is a genus with over 200 species in the Oleaceae (olive) family.  The plants are native to tropical and subtropical areas and can be either trees, shrubs, or vines; many of the vining types make good container plants.  Members of this genus can be evergreen or deciduous.  Jasmines are most well known for their heady fragranced flowers.  
+
+plant_type: Evergreen, Shrub, tree, vine
+
+plant_shape: various
+
+bloom_time: annual
+
+dimensions: 3ft to 10ft tall, 3ft to 10ft wide
+
+flower_bool: y
+
+flower_color:     Gold/Yellow
+    Pink
+    White
+
+flower_dimensions: 1 inch - 3 inches
+
+fruit_bool: y
+
+fruit_color: black
+
+leaf_color:green
+
+leaf_dimensions: 2- 5 inches
+
+leaves_type: Compound (pinnately, bipinnately, palmately)
+
+bark_color: Green, Pale Green
+
+stem_color: Green, Pale Green
+
+sun_exposure: Full sun
+
+soil: good drainage, moist, occasionally dry
+
+water_requirements: medium moisture to wet
+
+USDA_hardiness_zone: 9B, 9a, 10b, 10a, 11b, 11a
+
+poisonous_bool: n
+
+edible_bool: n
+
+skin_irritant_bool: n
+
+Is it dangerous?  no
+
+
