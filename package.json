@@ -1,0 +1,8 @@
+{
+  "name": "identi-flora-cation",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "cd api/ && npm start"
+  }
+}
