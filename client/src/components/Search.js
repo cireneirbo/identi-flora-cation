@@ -30,23 +30,11 @@ function Search() {
 
   const [searchMessage, setSearchMessage] = useState("");
 
-  const [searchData, setSearchData] = useState("");
-
-  // useEffect(() => {
-  //   if(isSearched == false) {
-      
-  //     setSearchData(searchParams);
-      
-  //     return () => {
-  //       setIsSearched(true)
-  //     };
-  //   }
-  // }, []);
 
   let tempArr = [];
   
   console.log(data);
-  console.log(searchData);
+  
 
   // populate the search data after search button pressed
   const createSearchData = (params) => {
@@ -152,7 +140,7 @@ function Search() {
     let leafTypes = document.getElementById("leaf-type");
     let plantShapes = document.getElementById("plant-shape");
     let leafDimensions = document.getElementById("leaf-dimensions");
-    //let flowerDimensions = document.getElementById("flower-dimensions"); // add once flower-dimensions is turned into an array
+    let flowerDimensions = document.getElementById("flower-dimensions");
 
     let searchParams = [ 
       leafColors, 
@@ -164,21 +152,18 @@ function Search() {
       leafTypes,
       plantShapes,
       leafDimensions,
-      /* flowerDimensions */
+      flowerDimensions,
     ];
-    // console.log(`
-    // Leaf Color: ${leafColors.value}
-    // Bark Color: ${barkColors.value}
-    // `);
-    
-    // notify user if api hasn't returned data yet
+    //might not need the if statements. just ccall the other function and handle the rest there
+    // notify user that api has called and is searching for matches
     if (data === "") {
-      setSearchMessage(`${waitingMessage}`);
-    } 
-    // process search and display a waiting message for user while performing search
-    if (searchData === "" && data !== "") {
       setSearchMessage("Searching our database for matches...");
       createSearchData(searchParams);
+    } 
+    // process search and display a waiting message for user while performing search
+    if (data !== "") {
+      setSearchMessage("Searching our database for matches...");
+      // createSearchData(searchParams);
       // setSearchData(async () => {
       //   //await createSearchData(searchParams);
       //   await console.log("setsearchmess" + createSearchData(searchParams))
@@ -402,8 +387,6 @@ function Search() {
         flower_color: 
         flower_dimensions: only string type
 
-
-
         plant_type: {type: Array, required: true, maxLength: 10},
         plant_shape: {type: Array, required: true, maxLength: 10},
         flower_color: {type: Array, required: true, maxLength: 10},
@@ -415,21 +398,7 @@ function Search() {
         bark_color: {type: Array, required: true, maxLength: 10},
         stem_color: {type: Array, required: true, maxLength: 10},
         
-        
-
-        
-        
-        
-
-         
-         
-
-        
-
-        
-
-        
-
+     
 
 */
 
