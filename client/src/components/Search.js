@@ -33,6 +33,7 @@ function Search() {
 */
   const [searchMessage, setSearchMessage] = useState("");
 
+  console.log(data);
 
   // populate the search data after search button pressed
   const createSearchData = (params) => {
@@ -197,7 +198,7 @@ function Search() {
 
               <select id="plant-type" className="form-select" name="plant-type">
                 <option value="null">* None Selected *</option>
-                <option value="evergreen">Evergreen</option>
+                <option value="Evergreen">Evergreen</option>
                 <option value="shrub">Shrub</option>
                 <option value="vine">Vine</option>
               </select>
@@ -228,7 +229,7 @@ function Search() {
                 <option value="null">* None Selected *</option>
                 <option value="Yellow">Yellow</option>
                 <option value="Medium Green">Medium Green</option>
-                <option value="3">Crew Related</option>
+                <option value="Blue Green">Blue Green</option>
               </select>
             </label>
           </div>
