@@ -38,7 +38,7 @@ router.get('/shrub/:queryName', shrub_controller.shrub_detail);
 router.get('/shrubs', shrub_controller.shrub_list);
 
 // GET request for search of all Shrubs.
-router.get('/search', shrub_controller.shrub_search_get);
+router.get('/search/:leafColors', shrub_controller.shrub_search_get);
 
 // POST request for search of all Shrubs,
 router.post('/search', shrub_controller.shrub_search_post);

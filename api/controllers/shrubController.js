@@ -96,10 +96,23 @@ exports.about = function(req, res) {
 // Display Shrub search form on GET.
 exports.shrub_search_get = function(req, res, next) {
     
-    const list_shrubs = Shrub.shrubs;
+    //const list_shrubs = Shrub.shrubs;
+
+    const searchedShrubs = [];
+    for( let i = 0; i < Shrub.shrubs.length; i++) {
+
+        if(Shrub.shrubs[i].leaf_color.includes(req.params.leafColors)) {
+            searchedShrubs.push(Shrub.shrubs[i]);
+            console.log("Added: " + Shrub.shrubs[i].common_name);
+        }
+        else {
+            console.log(Shrub.shrubs[i].common_name);
+            console.log("No match: " + req.params);
+        }
+    }
             
     //res.render('shrub_form', { title: 'Search', shrub_list: list_shrubs} );
-    res.send( { title: 'Search', shrub_list: list_shrubs} );
+    res.send( { title: 'Search', shrub_list: searchedShrubs} );
         
 
 };

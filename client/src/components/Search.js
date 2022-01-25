@@ -13,7 +13,7 @@ function Search() {
   const [isSearched, setIsSearched] = useState(false);
 
   const [data, setData] = useState("");
-
+/*
   useEffect(() => {
     if(isProcessed == false) {
       axios.get(urlApi)
@@ -27,7 +27,7 @@ function Search() {
       };
     }
   }, []);
-
+*/
   const [searchMessage, setSearchMessage] = useState("");
 
 
@@ -39,11 +39,32 @@ function Search() {
   // populate the search data after search button pressed
   const createSearchData = (params) => {
 
-    console.log(data.shrub_list);
-
+    
+    // get data that matches search params
+    //console.log(params)
+    console.log(params[0].value)
+      axios.get(urlApi + 
+        "/" + params[0].value +
+        "/" + params[1].value +
+        "/" + params[2].value +
+        "/" + params[3].value +
+        "/" + params[4].value +
+        "/" + params[5].value +
+        "/" + params[6].value +
+        "/" + params[7].value +
+        "/" + params[8].value +
+        "/" + params[9].value
+      ).then(res => {
+        setData(res.data);
+      }).catch(err => {
+        console.log(err);
+      });
+      
+    
+      console.log(data);
       //let tempArr = [];
       
-
+/*
       for(let i = 0; i < data.shrub_list.length; i++) {
 
         // leafColors, 
@@ -55,7 +76,7 @@ function Search() {
              console.log(data.shrub_list[i])
              tempArr.push(data.shrub_list[i]);
           // }
-        }
+        }*/
 /*
         // barkColors, 
         if(data.shrub_list[i].bark_color.includes(params[1].value)) {
@@ -102,10 +123,10 @@ function Search() {
         //   console.log("yes");
         // }
 
-      }
+      //}
 
       //console.log(params[0].value);
-      console.log("tempArr = " + tempArr[0]._id + " end");
+      //console.log("tempArr = " + tempArr[0]._id + " end");
       //setSearchData(tempArr);
       //tempArr = [];
       
@@ -118,13 +139,14 @@ function Search() {
       
       // Change search message once search is complete
       // if(searchData !== "") {
-        if(tempArr !== []) {
+        //if(tempArr !== []) {
         //setSearchMessage("Displaying Results");
-        console.log(tempArr)
-      }
+        //console.log(tempArr)
+      //}
       // return( tempArr );
   }
 
+  // pass params to api call function
   const handleForm = (event) => {
 
     // prevent page reload when button is pressed
@@ -162,7 +184,7 @@ function Search() {
     } 
     // process search and display a waiting message for user while performing search
     if (data !== "") {
-      setSearchMessage("Searching our database for matches...");
+      setSearchMessage("We have found what you're looking for!");
       // createSearchData(searchParams);
       // setSearchData(async () => {
       //   //await createSearchData(searchParams);
