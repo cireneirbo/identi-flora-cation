@@ -243,7 +243,7 @@ exports.shrub_search_get = function(req, res, next) {
         
 
 };
-
+/*
 // Handle Shrub search on POST.
 exports.shrub_search_post = [
 
@@ -304,9 +304,10 @@ exports.shrub_search_post = [
                     searchedData.push(list_shrubs);
                 }
                     
-            res.render('search_results', { title: 'Search', /*shrub_search_list: shrub_search_list,*/ searchedData: searchedData } );
+            res.render('search_results', { title: 'Search', /*shrub_search_list: shrub_search_list,*/ //searchedData: searchedData } );
             //res.send({ /*shrub_search_list: shrub_search_list, shrub_list: list_shrubs,*/ searchedData: searchedData /*shrub_leaf_color: shrub_search_list.leaf_color*/ } );
-        });
+        //});
 
-    }
-];
+    //}
+//];
+

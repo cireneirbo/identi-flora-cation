@@ -38,22 +38,22 @@ function Search() {
   // populate the search data after search button pressed
   const createSearchData = (params) => {
     
-    axios.get(urlApi + 
-      "/" + params[0].value +
-      "/" + params[1].value +
-      "/" + params[2].value +
-      "/" + params[3].value +
-      "/" + params[4].value +
-      "/" + params[5].value +
-      "/" + params[6].value +
-      "/" + params[7].value +
-      "/" + params[8].value
-    ).then(res => {
-      setData(res.data);
-      setSearchMessage("We have found the shrubs you're looking for!");
-    }).catch(err => {
-      console.log(err);
-    });
+  axios.get(urlApi + 
+    "/" + params[0].value +
+    "/" + params[1].value +
+    "/" + params[2].value +
+    "/" + params[3].value +
+    "/" + params[4].value +
+    "/" + params[5].value +
+    "/" + params[6].value +
+    "/" + params[7].value +
+    "/" + params[8].value
+  ).then(res => {
+    setData(res.data);
+    setSearchMessage(res.data.message);
+  }).catch(err => {
+    console.log(err);
+  });
       
     
       console.log(data);

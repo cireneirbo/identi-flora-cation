@@ -41,7 +41,7 @@ router.get('/shrubs', shrub_controller.shrub_list);
 router.get('/search/:leafColors/:barkColors/:stemColors/:fruitColors/:flowerColors/:plantTypes/:plantShapes/:leafDimensions/:flowerDimensions', shrub_controller.shrub_search_get);
 
 // POST request for search of all Shrubs,
-router.post('/search', shrub_controller.shrub_search_post);
+/*router.post('/search', shrub_controller.shrub_search_post);*/
 
 // GET catalog about page.
 router.get('/about', shrub_controller.about);
