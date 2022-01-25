@@ -44,7 +44,7 @@ function Search() {
     //console.log(params)
     console.log(params[0].value)
       axios.get(urlApi + 
-        "/" + params[0].value +
+        "/" + params[0].value /*+
         "/" + params[1].value +
         "/" + params[2].value +
         "/" + params[3].value +
@@ -53,7 +53,7 @@ function Search() {
         "/" + params[6].value +
         "/" + params[7].value +
         "/" + params[8].value +
-        "/" + params[9].value
+        "/" + params[9].value*/
       ).then(res => {
         setData(res.data);
       }).catch(err => {

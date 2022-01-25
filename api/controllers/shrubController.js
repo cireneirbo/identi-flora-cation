@@ -98,12 +98,18 @@ exports.shrub_search_get = function(req, res, next) {
     
     //const list_shrubs = Shrub.shrubs;
 
+    // create empty array to add shrubs to
     const searchedShrubs = [];
-    for( let i = 0; i < Shrub.shrubs.length; i++) {
 
+    // check params for matches and then add to seachedShrubs array if not in it
+    for( let i = 0; i < Shrub.shrubs.length; i++) {
+        // if the shrub matches the param
         if(Shrub.shrubs[i].leaf_color.includes(req.params.leafColors)) {
-            searchedShrubs.push(Shrub.shrubs[i]);
-            console.log("Added: " + Shrub.shrubs[i].common_name);
+            // if not in searchedShrubs, add
+            if(!searchedShrubs.includes(Shrub.shrubs[i])) {
+                searchedShrubs.push(Shrub.shrubs[i]);
+                console.log("Added: " + Shrub.shrubs[i].common_name);
+            }
         }
         else {
             console.log(Shrub.shrubs[i].common_name);
