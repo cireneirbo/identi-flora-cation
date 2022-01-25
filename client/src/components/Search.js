@@ -8,6 +8,9 @@ function Search() {
 
   const urlApi = "http://127.0.0.1:9000/catalog/search";
 
+  // for displaying images
+  const baseURL = "http://localhost:9000";
+
   const [isProcessed, setIsProcessed] = useState(false);
 
   const [isSearched, setIsSearched] = useState(false);
@@ -31,38 +34,29 @@ function Search() {
   const [searchMessage, setSearchMessage] = useState("");
 
 
-  let tempArr = [];
-  
-  console.log(data);
-  
-
   // populate the search data after search button pressed
   const createSearchData = (params) => {
-
     
-    // get data that matches search params
-    //console.log(params)
-    console.log(params[0].value)
-      axios.get(urlApi + 
-        "/" + params[0].value /*+
-        "/" + params[1].value +
-        "/" + params[2].value +
-        "/" + params[3].value +
-        "/" + params[4].value +
-        "/" + params[5].value +
-        "/" + params[6].value +
-        "/" + params[7].value +
-        "/" + params[8].value +
-        "/" + params[9].value*/
-      ).then(res => {
-        setData(res.data);
-      }).catch(err => {
-        console.log(err);
-      });
+    axios.get(urlApi + 
+      "/" + params[0].value +
+      "/" + params[1].value +
+      "/" + params[2].value +
+      "/" + params[3].value +
+      "/" + params[4].value +
+      "/" + params[5].value +
+      "/" + params[6].value +
+      "/" + params[7].value +
+      "/" + params[8].value
+    ).then(res => {
+      setData(res.data);
+      setSearchMessage("We have found the shrubs you're looking for!");
+    }).catch(err => {
+      console.log(err);
+    });
       
     
       console.log(data);
-      //let tempArr = [];
+
       
 /*
       for(let i = 0; i < data.shrub_list.length; i++) {
@@ -164,6 +158,7 @@ function Search() {
     let leafDimensions = document.getElementById("leaf-dimensions");
     let flowerDimensions = document.getElementById("flower-dimensions");
 
+    // set param array to pass through next function
     let searchParams = [ 
       leafColors, 
       barkColors, 
@@ -171,28 +166,14 @@ function Search() {
       fruitColors, 
       flowerColors,
       plantTypes,
-      leafTypes,
       plantShapes,
       leafDimensions,
       flowerDimensions,
     ];
-    //might not need the if statements. just ccall the other function and handle the rest there
+    
     // notify user that api has called and is searching for matches
-    if (data === "") {
-      setSearchMessage("Searching our database for matches...");
-      createSearchData(searchParams);
-    } 
-    // process search and display a waiting message for user while performing search
-    if (data !== "") {
-      setSearchMessage("We have found what you're looking for!");
-      // createSearchData(searchParams);
-      // setSearchData(async () => {
-      //   //await createSearchData(searchParams);
-      //   await console.log("setsearchmess" + createSearchData(searchParams))
-      // })
-      
-    }
-
+    setSearchMessage("Searching our database for matches...");
+    createSearchData(searchParams);
 
   }
 
@@ -215,7 +196,7 @@ function Search() {
               <span className="form-span"></span>
 
               <select id="plant-type" className="form-select" name="plant-type">
-                <option value="">* None Selected *</option>
+                <option value="null">* None Selected *</option>
                 <option value="evergreen">Evergreen</option>
                 <option value="shrub">Shrub</option>
                 <option value="vine">Vine</option>
@@ -229,7 +210,7 @@ function Search() {
               <span className="form-span"></span>
 
               <select id="plant-shape" className="form-select" name="plant-shape">
-                <option value="">* None Selected *</option>
+                <option value="null">* None Selected *</option>
                 <option value="1">Spreading</option>
                 <option value="2">Climbing</option>
                 <option value="3">Arching</option>
@@ -244,7 +225,7 @@ function Search() {
               <span className="form-span"></span>
 
               <select id="leaf-color" className="form-select" name="leaf-color">
-                <option value="">* None Selected *</option>
+                <option value="null">* None Selected *</option>
                 <option value="Yellow">Yellow</option>
                 <option value="Medium Green">Medium Green</option>
                 <option value="3">Crew Related</option>
@@ -258,7 +239,7 @@ function Search() {
               <span className="form-span"></span>
 
               <select id="leaf-type" className="form-select" name="leaf-type">
-                <option value="">* None Selected *</option>
+                <option value="null">* None Selected *</option>
                 <option value="1">Simulation</option>
                 <option value="2">Rocket Test</option>
                 <option value="3">Crew Related</option>
@@ -272,7 +253,7 @@ function Search() {
               <span className="form-span"></span>
 
               <select id="leaf-dimensions" className="form-select" name="leaf-dimensions">
-                <option value="">* None Selected *</option>
+                <option value="null">* None Selected *</option>
                 <option value="1">Simulation</option>
                 <option value="2">Rocket Test</option>
                 <option value="3">Crew Related</option>
@@ -287,7 +268,7 @@ function Search() {
               <span className="form-span"></span>
               
               <select id="bark-color" className="form-select" name="bark-color">
-                <option value="">* None Selected *</option>
+                <option value="null">* None Selected *</option>
                 <option value="lightBrown">Light Brown</option>
                 <option value="lightGrey">Light Grey</option>
                 <option value="tan">Tan</option>
@@ -302,7 +283,7 @@ function Search() {
               <span className="form-span"></span>
               
               <select id="stem-color" className="form-select" name="stem-color">
-                <option value="">* None Selected *</option>
+                <option value="null">* None Selected *</option>
                 <option value="lightBrown">Light Brown</option>
                 <option value="lightGrey">Light Grey</option>
                 <option value="tan">Tan</option>
@@ -317,7 +298,7 @@ function Search() {
               <span className="form-span"></span>
               
               <select id="fruit-color" className="form-select" name="fruit-color">
-                <option value="">* None Selected *</option>
+                <option value="null">* None Selected *</option>
                 <option value="lightBrown">Light Brown</option>
                 <option value="lightGrey">Light Grey</option>
                 <option value="tan">Tan</option>
@@ -332,7 +313,7 @@ function Search() {
               <span className="form-span"></span>
               
               <select id="flower-color" className="form-select" name="flower-color">
-                <option value="">* None Selected *</option>
+                <option value="null">* None Selected *</option>
                 <option value="lightBrown">Light Brown</option>
                 <option value="lightGrey">Light Grey</option>
                 <option value="tan">Tan</option>
@@ -346,7 +327,7 @@ function Search() {
               <span className="form-span"></span>
               
               <select id="flower-dimensions" className="form-select" name="flower-dimensions">
-                <option value="">* None Selected *</option>
+                <option value="null">* None Selected *</option>
                 <option value="lightBrown">Light Brown</option>
                 <option value="lightGrey">Light Grey</option>
                 <option value="tan">Tan</option>
@@ -374,12 +355,12 @@ function Search() {
             {/* {searchData !== "" && 
               searchMessage === "Displaying Results" &&
               searchData.shrub_list.map(shrub => ( */}
-            {tempArr !== [] && 
-              searchMessage === "Searching our database for matches..." &&
-              tempArr.map(shrub => (
+            {data !== "" && 
+              //searchMessage === "We have found what you're looking for!" &&
+              data.shrub_list.map(shrub => (
                 
                 <li key={shrub.common_name[0]}>
-                  <img src={shrub.images[0]} />
+                  <img src={baseURL + shrub.images[0]} />
                   <h3>{shrub.common_name[0]}</h3>
                   <p><b>{shrub.latin_name}</b></p>
                   <p>{shrub.brief_description}</p>

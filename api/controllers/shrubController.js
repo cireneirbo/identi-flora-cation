@@ -99,26 +99,77 @@ exports.shrub_search_get = function(req, res, next) {
     //const list_shrubs = Shrub.shrubs;
 
     // create empty array to add shrubs to
-    const searchedShrubs = [];
+    let searchedShrubs = [];
+    let message = "";
+    let shrubParamKeys = [];
+    let searchParamsValues = [
+        req.params.leafColors,
+        req.params.barkColors,
+        req.params.stemColors,
+        req.params.fruitColors,
+        req.params.plantTypes,
+        req.params.plantShapes,
+        req.params.leafDimensions,
+        req.params.flowerDimensions
+    ];
 
     // check params for matches and then add to seachedShrubs array if not in it
     for( let i = 0; i < Shrub.shrubs.length; i++) {
+        // set values to reduce code repetition
+        shrubParamKeys = [
+            Shrub.shrubs[i].leaf_color,
+            Shrub.shrubs[i].bark_color,
+            Shrub.shrubs[i].stem_color,
+            Shrub.shrubs[i].fruit_color,
+            Shrub.shrubs[i].flower_color,
+            Shrub.shrubs[i].plant_type,
+            Shrub.shrubs[i].plant_shape,
+            Shrub.shrubs[i].leaf_dimensions,
+            Shrub.shrubs[i].flower_dimensions,
+        ];
+
+        for(let j = 0; j < shrubParamKeys.length; j++) {
+            // if the shrub matches the param
+            if(shrubParamKeys[i].includes(searchParamsValues[j])) {
+                // if not in searchedShrubs, add
+                if(!searchedShrubs.includes(Shrub.shrubs[i])) {
+                    searchedShrubs.push(Shrub.shrubs[i]);
+                    message = "We have found the shrubs you are looking for!";
+                    console.log("Added: " + Shrub.shrubs[i].common_name);
+                }
+            }
+        }
+/*
         // if the shrub matches the param
         if(Shrub.shrubs[i].leaf_color.includes(req.params.leafColors)) {
             // if not in searchedShrubs, add
             if(!searchedShrubs.includes(Shrub.shrubs[i])) {
                 searchedShrubs.push(Shrub.shrubs[i]);
+                message = "We have found the shrubs you are looking for!";
+                console.log("Added: " + Shrub.shrubs[i].common_name);
+            }
+        }
+        if(Shrub.shrubs[i].bark_color.includes(req.params.barkColors)) {
+            // if not in searchedShrubs, add
+            if(!searchedShrubs.includes(Shrub.shrubs[i])) {
+                searchedShrubs.push(Shrub.shrubs[i]);
+                message = "We have found the shrubs you are looking for!";
                 console.log("Added: " + Shrub.shrubs[i].common_name);
             }
         }
         else {
             console.log(Shrub.shrubs[i].common_name);
             console.log("No match: " + req.params);
-        }
+        }*/
+
+    }
+
+    if(searchedShrubs.length == 0) {
+        message = "We could not find any matches...";
     }
             
     //res.render('shrub_form', { title: 'Search', shrub_list: list_shrubs} );
-    res.send( { title: 'Search', shrub_list: searchedShrubs} );
+    res.send( { message: message, shrub_list: searchedShrubs} );
         
 
 };
