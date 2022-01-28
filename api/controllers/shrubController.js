@@ -161,8 +161,9 @@ exports.shrub_search_get = function(req, res, next) {
                 //console.log("Added: " + Shrub.shrubs[i].common_name);
             }
         }
-        // leaf dimensions
-        if(Shrub.shrubs[i].leaf_dimensions.includes(req.params.leafDimensions)) {
+        // leaf dimensions - long
+        console.log(Shrub.shrubs[i].leaf_dimensions[0].long)
+        if(Shrub.shrubs[i].leaf_dimensions[0].long.includes(req.params.leafDimensions)) {
             // if not in searchedShrubs, add
             if(!searchedShrubs.includes(Shrub.shrubs[i])) {
                 searchedShrubs.push(Shrub.shrubs[i]);
