@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 
@@ -23,14 +23,15 @@ function Search() {
       "/" + params[3].value +
       "/" + params[4].value +
       "/" + params[5].value +
-      "/" + params[6].value +
-      "/" + params[7].value +
-      "/" + params[8].value
+      "/" + params[6].value //+
+      // "/" + params[7].value +
+      // "/" + params[8].value
     ).then(res => {
       setData(res.data);
       setSearchMessage(res.data.message);
     }).catch(err => {
       console.log(err);
+      console.log(data)
     });
       
   }
@@ -48,10 +49,9 @@ function Search() {
     let fruitColors = document.getElementById("fruit-color");
     let flowerColors = document.getElementById("flower-color");
     let plantTypes = document.getElementById("plant-type");
-    let leafTypes = document.getElementById("leaf-type");
     let plantShapes = document.getElementById("plant-shape");
-    let leafDimensions = document.getElementById("leaf-dimensions");
-    let flowerDimensions = document.getElementById("flower-dimensions");
+    // let leafDimensionsLong = document.getElementById("leaf-dimensions-long");
+    // let flowerDimensionsLong = document.getElementById("flower-dimensions-long");
 
     // set param array to pass through next function
     let searchParams = [ 
@@ -62,8 +62,8 @@ function Search() {
       flowerColors,
       plantTypes,
       plantShapes,
-      leafDimensions,
-      flowerDimensions,
+      // leafDimensionsLong,
+      // flowerDimensionsLong,
     ];
     
     // notify user that api has called and is searching for matches
@@ -150,19 +150,19 @@ function Search() {
             </label>
           </div>
 
-          <div>
+          {/* <div>
             <label className="form-label">
-              <span className="form-span-text">Approximately how big are the leaves?</span>
+              <span className="form-span-text">Approximately how long are the leaves?</span>
               <span className="form-span"></span>
 
-              <select id="leaf-dimensions" className="form-select" name="leaf-dimensions">
+              <select id="leaf-dimensions-long" className="form-select" name="leaf-dimensions-long">
                 <option value="null">* None Selected *</option>
                 <option value="1 in">1 inch</option>
                 <option value="2 in">2 inches</option>
                 <option value="3 in">3 inches</option>
               </select>
             </label>
-          </div>
+          </div> */}
 
           {/* Bark */}
           <div>
@@ -224,19 +224,19 @@ function Search() {
             </label>
           </div>
 
-          <div>
+          {/* <div>
             <label className="form-label">
               <span className="form-span-text">Approximately how big are its flowers?</span>
               <span className="form-span"></span>
               
-              <select id="flower-dimensions" className="form-select" name="flower-dimensions">
+              <select id="flower-dimensions-long" className="form-select" name="flower-dimensions-long">
                 <option value="null">* None Selected *</option>
                 <option value="lightBrown">Light Brown</option>
                 <option value="lightGrey">Light Grey</option>
                 <option value="tan">Tan</option>
               </select>
             </label>
-          </div>
+          </div> */}
 
           {/* Button */}
           <div>
@@ -258,7 +258,7 @@ function Search() {
               data.shrub_list.map(shrub => (
                 
                 <li key={shrub.common_name}>
-                  <img src={baseURL + shrub.images[0]} />
+                  <img src={baseURL + shrub.images[0]} alt="" />
                   <a href={shrub.urlFrontend}><h3>{shrub.common_name}</h3></a>
                   <p><b>{shrub.latin_name}</b></p>
                   <p>{shrub.brief_description}</p>

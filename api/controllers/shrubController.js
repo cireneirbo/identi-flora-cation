@@ -46,11 +46,9 @@ exports.about = function(req, res) {
     
 };
 
-// 
 // Display Shrub search form on GET.
 exports.shrub_search_get = function(req, res, next) {
     
-    //const list_shrubs = Shrub.shrubs;
 
     // create empty array to add shrubs to
     let searchedShrubs = [];
@@ -60,42 +58,16 @@ exports.shrub_search_get = function(req, res, next) {
         req.params.leafColors,
         req.params.barkColors,
         req.params.stemColors,
+        req.params.flowerColors,
         req.params.fruitColors,
         req.params.plantTypes,
         req.params.plantShapes,
-        req.params.leafDimensions,
-        req.params.flowerDimensions
+        req.params.leafDimensionsLong,
+        req.params.flowerDimensionsLong
     ];
 
     // check params for matches and then add to seachedShrubs array if not in it
     for( let i = 0; i < Shrub.shrubs.length; i++) {
-        // set values to reduce code repetition
-        /*shrubParamKeys = [
-            Shrub.shrubs[i].leaf_color,
-            Shrub.shrubs[i].bark_color,
-            Shrub.shrubs[i].stem_color,
-            Shrub.shrubs[i].fruit_color,
-            Shrub.shrubs[i].flower_color,
-            Shrub.shrubs[i].plant_type,
-            Shrub.shrubs[i].plant_shape,
-            Shrub.shrubs[i].leaf_dimensions,
-            Shrub.shrubs[i].flower_dimensions,
-        ];
-
-        for(let j = 0; j < shrubParamKeys.length; j++) {
-            // if the shrub matches the param
-            if(shrubParamKeys[i].includes(searchParamsValues[j])) {
-                // if not in searchedShrubs, add
-                if(!searchedShrubs.includes(Shrub.shrubs[i])) {
-                    searchedShrubs.push(Shrub.shrubs[i]);
-                    message = "We have found the shrubs you are looking for!";
-                    console.log("Added: " + Shrub.shrubs[i].common_name);
-                }
-            }
-
-            console.log(searchParamsValues[j]);
-        }
-        console.log(shrubParamKeys[i]);*/
 
         // if the shrub matches the param
         // leaf color
@@ -104,7 +76,6 @@ exports.shrub_search_get = function(req, res, next) {
             if(!searchedShrubs.includes(Shrub.shrubs[i])) {
                 searchedShrubs.push(Shrub.shrubs[i]);
                 message = "We have found the shrubs you are looking for!";
-                //console.log("Added: " + Shrub.shrubs[i].common_name);
             }
         }
         //bark color
@@ -113,7 +84,6 @@ exports.shrub_search_get = function(req, res, next) {
             if(!searchedShrubs.includes(Shrub.shrubs[i])) {
                 searchedShrubs.push(Shrub.shrubs[i]);
                 message = "We have found the shrubs you are looking for!";
-                //console.log("Added: " + Shrub.shrubs[i].common_name);
             }
         }
         //stem color
@@ -122,7 +92,6 @@ exports.shrub_search_get = function(req, res, next) {
             if(!searchedShrubs.includes(Shrub.shrubs[i])) {
                 searchedShrubs.push(Shrub.shrubs[i]);
                 message = "We have found the shrubs you are looking for!";
-                //console.log("Added: " + Shrub.shrubs[i].common_name);
             }
         }
         //fruit color
@@ -131,7 +100,6 @@ exports.shrub_search_get = function(req, res, next) {
             if(!searchedShrubs.includes(Shrub.shrubs[i])) {
                 searchedShrubs.push(Shrub.shrubs[i]);
                 message = "We have found the shrubs you are looking for!";
-                //console.log("Added: " + Shrub.shrubs[i].common_name);
             }
         }
         //flower color
@@ -140,7 +108,6 @@ exports.shrub_search_get = function(req, res, next) {
             if(!searchedShrubs.includes(Shrub.shrubs[i])) {
                 searchedShrubs.push(Shrub.shrubs[i]);
                 message = "We have found the shrubs you are looking for!";
-                //console.log("Added: " + Shrub.shrubs[i].common_name);
             }
         }
         //plant type
@@ -149,7 +116,6 @@ exports.shrub_search_get = function(req, res, next) {
             if(!searchedShrubs.includes(Shrub.shrubs[i])) {
                 searchedShrubs.push(Shrub.shrubs[i]);
                 message = "We have found the shrubs you are looking for!";
-                //console.log("Added: " + Shrub.shrubs[i].common_name);
             }
         }
         // plant shapes
@@ -158,28 +124,25 @@ exports.shrub_search_get = function(req, res, next) {
             if(!searchedShrubs.includes(Shrub.shrubs[i])) {
                 searchedShrubs.push(Shrub.shrubs[i]);
                 message = "We have found the shrubs you are looking for!";
-                //console.log("Added: " + Shrub.shrubs[i].common_name);
             }
         }
         // leaf dimensions - long
-        console.log(Shrub.shrubs[i].leaf_dimensions[0].long)
-        if(Shrub.shrubs[i].leaf_dimensions[0].long.includes(req.params.leafDimensions)) {
+        /*console.log(Shrub.shrubs[i].leaf_dimensions[0].long)
+        if(Shrub.shrubs[i].leaf_dimensions[0].long.includes(req.params.leafDimensionsLong)) {
             // if not in searchedShrubs, add
             if(!searchedShrubs.includes(Shrub.shrubs[i])) {
                 searchedShrubs.push(Shrub.shrubs[i]);
                 message = "We have found the shrubs you are looking for!";
-                //console.log("Added: " + Shrub.shrubs[i].common_name);
             }
-        }
-        // flower dimensions
-        if(Shrub.shrubs[i].flower_dimensions.includes(req.params.flowerDimensions)) {
+        }*/
+        // flower dimensions - long
+        /*if(Shrub.shrubs[i].flower_dimensions[0].long.includes(req.params.flowerDimensionsLong)) {
             // if not in searchedShrubs, add
             if(!searchedShrubs.includes(Shrub.shrubs[i])) {
                 searchedShrubs.push(Shrub.shrubs[i]);
                 message = "We have found the shrubs you are looking for!";
-                //console.log("Added: " + Shrub.shrubs[i].common_name);
             }
-        }
+        }*/
         else {
             //console.log(Shrub.shrubs[i].common_name);
             //console.log("No match: " + req.params);
