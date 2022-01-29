@@ -172,9 +172,16 @@ function Search() {
               
               <select id="bark-color" className="form-select" name="bark-color">
                 <option value="null">* None Selected *</option>
-                <option value="lightBrown">Light Brown</option>
-                <option value="lightGrey">Light Grey</option>
-                <option value="tan">Tan</option>
+                <option value="Light Brown">Light Brown</option>
+                <option value="Light Grey">Light Grey</option>
+                <option value="Green">Green</option>
+                <option value="Tan">Tan</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Medium Green">Medium Green</option>
+                <option value="Dark Brown">Dark Brown</option>
+                <option value="Grey">Grey</option>
+                <option value="Silver">Silver</option>
+                <option value="Pale Green">Pale Green</option>
               </select>
             </label>
           </div>
@@ -187,9 +194,18 @@ function Search() {
               
               <select id="stem-color" className="form-select" name="stem-color">
                 <option value="null">* None Selected *</option>
-                <option value="lightBrown">Light Brown</option>
-                <option value="lightGrey">Light Grey</option>
-                <option value="tan">Tan</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Medium Green">Medium Green</option>
+                <option value="Green">Green</option>
+                <option value="Red">Red</option>
+                <option value="Burgundy">Burgundy</option>
+                <option value="Copper">Copper</option>
+                <option value="Brown">Brown</option>
+                <option value="Creamy">Creamy</option>
+                <option value="Tan">Tan</option>
+                <option value="Grey">Grey</option>
+                <option value="Silver">Silver</option>
+                <option value="Pale Green">Pale Green</option>
               </select>
             </label>
           </div>
@@ -202,9 +218,13 @@ function Search() {
               
               <select id="fruit-color" className="form-select" name="fruit-color">
                 <option value="null">* None Selected *</option>
-                <option value="lightBrown">Light Brown</option>
-                <option value="lightGrey">Light Grey</option>
-                <option value="tan">Tan</option>
+                <option value="Achene">Achene</option>
+                <option value="Red">Red</option>
+                <option value="Burgundy">Burgundy</option>
+                <option value="Orange">Orange</option>
+                <option value="Brown">Brown</option>
+                <option value="Dark">Dark</option>
+                <option value="Black">Black</option>
               </select>
             </label>
           </div>
@@ -217,9 +237,16 @@ function Search() {
               
               <select id="flower-color" className="form-select" name="flower-color">
                 <option value="null">* None Selected *</option>
-                <option value="lightBrown">Light Brown</option>
-                <option value="lightGrey">Light Grey</option>
-                <option value="tan">Tan</option>
+                <option value="Red">Red</option>
+                <option value="Pink">Pink</option>
+                <option value="White">White</option>
+                <option value="Purple">Purple</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Orange">Orange</option>
+                <option value="Pale Pink">Pale Pink</option>
+                <option value="Gold">Gold</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Burgundy">Burgundy</option>
               </select>
             </label>
           </div>
