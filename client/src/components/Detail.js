@@ -56,6 +56,61 @@ function Detail() {
               <p>{data.shrub[0].latin_name}</p>
               <p>{data.shrub[0].brief_description}</p>
             </li>
+            <tr>
+              {/* Plant Types */}
+              <tr>
+                <th>
+                  Common Plant Types 
+                </th>
+                {data.shrub[0].plant_type.map(pt => (
+                  <td>
+                    {pt}
+                  </td>
+                ))}
+              </tr>
+              <tr>
+                
+                <th>
+                  Common Plant Shapes
+                </th>
+                {/* Plant Shapes */}
+                
+                {data.shrub[0].plant_shape.map(ps => (
+                  <td>
+                    {ps}
+                  </td>
+                ))}
+              </tr>
+            </tr>
+
+            <tr>
+              {/* Bloom Time */}
+              <tr>
+                <th>
+                  Common Bloom Times
+                </th>
+                
+                {data.shrub[0].bloom_time.map(bt => (
+                  <td>
+                    {bt}
+                  </td>
+                ))}
+              </tr>
+              <tr>
+                <th>
+                  Common Leaf Colors
+                </th>
+                
+                {/* Leaf Colors */}
+                
+                {data.shrub[0].leaf_color.map(lc => (
+                  <td>
+                    {lc}
+                  </td>
+                ))}
+              </tr>
+            </tr>
+
               {/* h4 Plant Type
               each item in shrub[0].plant_type
                 | #{item} 
