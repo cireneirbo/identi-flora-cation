@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -23,8 +22,6 @@ function List() {
       return setIsProcessed(true);
     }
   }, []);
-
-  // console.log(data);
   
   // Displays a waiting message if API hasn't returned yet
   if (data === "" || isProcessed === false) {

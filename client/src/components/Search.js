@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-
 function Search() {
 
   const urlApi = "http://127.0.0.1:9000/catalog/search";
