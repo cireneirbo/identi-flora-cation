@@ -56,6 +56,8 @@ function Detail() {
               <p>{data.shrub[0].latin_name}</p>
               <p>{data.shrub[0].brief_description}</p>
             </li>
+
+            <h2>General Plant Info</h2>
             <table>
               {/* Plant Types */}
               <tr>
@@ -68,13 +70,12 @@ function Detail() {
                   </td>
                 ))}
               </tr>
+
+              {/* Plant Shapes */}
               <tr>
-                
                 <th>
                   Common Plant Shapes
                 </th>
-                {/* Plant Shapes */}
-                
                 {data.shrub[0].plant_shape.map(ps => (
                   <td>
                     {ps}
@@ -87,7 +88,6 @@ function Detail() {
                 <th>
                   Common Bloom Times
                 </th>
-                
                 {data.shrub[0].bloom_time.map(bt => (
                   <td>
                     {bt}
@@ -95,6 +95,11 @@ function Detail() {
                 ))}
               </tr>
 
+            </table>
+
+            {/* Leaves */}
+            <h2>Leaf Info</h2>
+            <table>
               {/* Leaf Colors */}
               <tr>
                 <th>
@@ -132,49 +137,135 @@ function Detail() {
               </tr>
             </table>
 
-              {/*}
-              <li>
-              img(src=shrub[0].images[1])
-               
-              h4 Leaf Size
-              each item in shrub[0].leaf_dimensions
-                | #{item} 
-              else
-                li 
-              h4 Flower Colors
-              each item in shrub[0].flower_color
-                | #{item} 
-              else
-                li 
-              h4 Flower Size
-              each item in shrub[0].flower_dimensions
-                | #{item} 
-              else
-                li
-              </li> 
-              <li>
-              img(src=shrub[0].images[2])
-              h4 Stem Colors
-              each item in shrub[0].stem_color
-                | #{item} 
-              else
-                li 
-              h4 Bark Colors
-              each item in shrub[0].bark_color
-                | #{item} 
-              else
-                li 
-              h4 Sun Requirements
-                p #{shrub[0].sun_exposure}
-              h4 Soil Requirements
-                p #{shrub[0].soil}
-              h4 Water Requirements
-                p #{shrub[0].water_requirements}     
-              </li> 
-              <li>
-              h3 Is it dangerous?
-                p #{shrub[0].dangerous_description}
-              </li>  */}
+            <li>
+              <img src={baseURL + data.shrub[0].images[1]} /> 
+              <h4>Is It dangerous?</h4>
+              <p>{data.shrub[0].dangerous_description}</p>
+            </li>
+
+
+            {/* Flowers and Flowers */}
+            <h2>Fruit and Flower Info</h2>
+            <table>
+
+              {/* Flower Colors */}
+              <tr>
+                <th>
+                  Flower Colors
+                </th>
+                {data.shrub[0].flower_color.map(fc => (
+                  <td>
+                    {fc}
+                  </td>
+                ))}
+              </tr>
+
+              {/* Flower Dimensions Tall */}
+              <tr>
+                <th>
+                  Average Flower Heights
+                </th>
+                {data.shrub[0].flower_dimensions[0].tall.map(ft => (
+                  <td>
+                    {ft}
+                  </td>
+                ))}
+              </tr>
+
+              {/* Flower Dimensions Wide */}
+              <tr>
+                <th>
+                  Average Flower Widths
+                </th>
+                {data.shrub[0].flower_dimensions[1].wide.map(fw => (
+                  <td>
+                    {fw}
+                  </td>
+                ))}
+              </tr>
+
+              {/* Fruit Colors */}
+              <tr>
+                <th>
+                  Fruit Colors
+                </th>
+                {data.shrub[0].fruit_color.map(fc => (
+                  <td>
+                    {fc}
+                  </td>
+                ))}
+              </tr>
+
+            </table>
+
+            <li>
+              <img src={baseURL + data.shrub[0].images[2]} /> 
+              <th>Soil, Sun, Moisture Requirements</th>
+            
+              <table>
+                {/* Soil */}
+                <tr>
+                  <th>
+                    Soil
+                  </th>
+                  <td>
+                    {data.shrub[0].soil}
+                  </td>
+                </tr>
+
+                {/* Sun */}
+                <tr>
+                  <th>
+                    Sun
+                  </th>
+                  <td>
+                    {data.shrub[0].sun_exposure}
+                  </td>
+                </tr>
+
+                {/* Water */}
+                <tr>
+                  <th>
+                    Water
+                  </th>
+                  <td>
+                    {data.shrub[0].water_requirements}
+                  </td>
+                </tr>
+
+              </table> 
+            </li>
+
+
+            {/* Stem and Bark */}
+            <h2>Stem and Bark Info</h2>
+            <table>
+
+              {/* Stem Colors */}
+              <tr>
+                <th>
+                  Stem Colors
+                </th>
+                {data.shrub[0].stem_color.map(sc => (
+                  <td>
+                    {sc}
+                  </td>
+                ))}
+              </tr>
+
+              {/* Bark Colors */}
+              <tr>
+                <th>
+                  Bark Colors
+                </th>
+                {data.shrub[0].bark_color.map(bc => (
+                  <td>
+                    {bc}
+                  </td>
+                ))}
+              </tr>
+            </table>
+              
           </ul>
         </div>
       </div>
@@ -183,12 +274,3 @@ function Detail() {
 }
 
 export default Detail;
-
-
-
-
-
-
-
-
-

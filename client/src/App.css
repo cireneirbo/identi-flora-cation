@@ -99,3 +99,26 @@ li:hover {
 }
 
 /* About page */
+
+
+/* Detail Page */
+tr {
+  padding: 10px 30px;
+  margin: 0px 0px 0px 0px;
+}
+
+th, td {
+  padding: 5px 30px;
+  margin: 0px 0px 0px 0px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+table {
+  border: 1px solid #ddd;
+}
+
+.heading-center {
+  text-align: center;
+  padding-left: 80px;
+}
