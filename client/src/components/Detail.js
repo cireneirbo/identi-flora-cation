@@ -56,7 +56,7 @@ function Detail() {
               <p>{data.shrub[0].latin_name}</p>
               <p>{data.shrub[0].brief_description}</p>
             </li>
-            <tr>
+            <table>
               {/* Plant Types */}
               <tr>
                 <th>
@@ -81,9 +81,7 @@ function Detail() {
                   </td>
                 ))}
               </tr>
-            </tr>
-
-            <tr>
+            
               {/* Bloom Time */}
               <tr>
                 <th>
@@ -96,44 +94,48 @@ function Detail() {
                   </td>
                 ))}
               </tr>
+
+              {/* Leaf Colors */}
               <tr>
                 <th>
                   Common Leaf Colors
                 </th>
-                
-                {/* Leaf Colors */}
-                
                 {data.shrub[0].leaf_color.map(lc => (
                   <td>
                     {lc}
                   </td>
                 ))}
               </tr>
-            </tr>
 
-              {/* h4 Plant Type
-              each item in shrub[0].plant_type
-                | #{item} 
-              else
-                li
-              h4 Plant Shape
-              each item in shrub[0].plant_shape
-                | #{item} 
-              else
-                li
-              h4 Bloom Time
-              each item in shrub[0].bloom_time
-                | #{item} 
-              else
-                li  
-              </li>
+              {/* Leaf Dimensions Long */}
+              <tr>
+                <th>
+                  Average Leaf Lengths
+                </th>
+                {data.shrub[0].leaf_dimensions[0].long.map(ld => (
+                  <td>
+                    {ld}
+                  </td>
+                ))}
+              </tr>
+
+              {/* Leaf Dimensions Wide */}
+              <tr>
+                <th>
+                  Average Leaf Widths
+                </th>
+                {data.shrub[0].leaf_dimensions[1].wide.map(lw => (
+                  <td>
+                    {lw}
+                  </td>
+                ))}
+              </tr>
+            </table>
+
+              {/*}
               <li>
               img(src=shrub[0].images[1])
-              h4 Leaf Colors
-              each item in shrub[0].leaf_color
-                | #{item} 
-              else
-                li 
+               
               h4 Leaf Size
               each item in shrub[0].leaf_dimensions
                 | #{item} 
