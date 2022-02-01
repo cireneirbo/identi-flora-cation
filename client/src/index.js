@@ -9,7 +9,6 @@ import List from './components/List';
 import Search from './components/Search';
 import Detail from './components/Detail';
 
-
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(
@@ -18,9 +17,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />} >
           <Route exact path="/" element={<Home />} />
-          <Route exact path="list" element={<List />} >
-            {/* <Route path=":detailName" element={<Detail />} /> */}
-          </Route>
+          <Route exact path="list" element={<List />} />
           <Route path="list/:detailName" element={<Detail />} />
           <Route path="search" element={<Search />} />
           <Route path="about" element={<About />} />
@@ -34,10 +31,7 @@ ReactDOM.render(
           />
         </Route>
       </Routes>
-      {/* <App /> */}
     </React.StrictMode>
   </BrowserRouter>,
   rootElement
 );
-
-
